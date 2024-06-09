@@ -1,0 +1,36 @@
+{
+  "name": "starlight-theme-rapide-docs",
+  "version": "0.0.1",
+  "license": "MIT",
+  "description": "// TODO(HiDeoo)",
+  "author": "HiDeoo <github@hideoo.dev> (https://hideoo.dev)",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "lint": "prettier -c --cache . && eslint . --cache --max-warnings=0"
+  },
+  "dependencies": {
+    "@astrojs/starlight": "^0.24.0",
+    "astro": "^4.10.1",
+    "sharp": "^0.33.4",
+    "starlight-package-managers": "^0.6.0"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "packageManager": "pnpm@9.0.4",
+  "private": true,
+  "sideEffects": false,
+  "keywords": [
+    "// TODO(HiDeoo)"
+  ],
+  "homepage": "https://github.com/HiDeoo/starlight-theme-rapide",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HiDeoo/starlight-theme-rapide.git",
+    "directory": "docs"
+  },
+  "bugs": "https://github.com/HiDeoo/starlight-theme-rapide/issues"
+}

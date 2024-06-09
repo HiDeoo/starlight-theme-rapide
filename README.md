@@ -1,1 +1,1 @@
-# starlight-theme-rapide
+packages/starlight-theme-rapide/README.md

@@ -1,0 +1,3 @@
+.prettierignore
+tsconfig.json
+tsconfig.tsbuildinfo

@@ -1,0 +1,42 @@
+---
+title: Starlight Versions
+description: Starlight plugin to version documentation pages.
+head:
+  - tag: title
+    content: Starlight Versions
+template: splash
+editUrl: false
+lastUpdated: false
+hero:
+  tagline: Starlight plugin to version documentation pages.
+  image:
+    html: '🕒'
+  actions:
+    - text: Getting Started
+      link: /getting-started/
+      icon: rocket
+      variant: primary
+    - text: Demo
+      link: https://starlight-versions-example.vercel.app
+      icon: external
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components'
+
+## Next steps
+
+<CardGrid stagger>
+  <Card title="Install the plugin" icon="puzzle">
+    Check the [getting started guide](/getting-started/) for installation
+    instructions.
+  </Card>
+  <Card title="Configure the plugin" icon="rocket">
+    Edit your config in the `astro.config.mjs` file.
+  </Card>
+  <Card title="Version your documentation" icon="seti:clock">
+    Author multiple versions of your documentation pages.
+  </Card>
+  <Card title="Read the docs" icon="open-book">
+    Learn more in the [Starlight Versions Docs](/getting-started/).
+  </Card>
+</CardGrid>

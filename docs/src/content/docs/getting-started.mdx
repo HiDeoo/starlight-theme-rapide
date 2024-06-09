@@ -1,0 +1,78 @@
+---
+title: Getting Started
+description: Learn how to version your documentation pages with the Starlight Versions plugin.
+---
+
+A [Starlight](https://starlight.astro.build) plugin to version documentation pages.
+Check out the [demo](https://starlight-versions-example.vercel.app) for a preview of the plugin in action.
+
+:::tip[Caution]
+Starlight Versions is an [opinionated](/guides/about-versioning/#versioning-strategies) plugin that is still in early development.
+Expect frequent updates and changes to the plugin as development continues.
+:::
+
+## Prerequisites
+
+You will need to have a Starlight website set up.
+If you don't have one yet, you can follow the ["Getting Started"](https://starlight.astro.build/getting-started) guide in the Starlight docs to create one.
+
+## Installation
+
+When ready to version your documentation pages, you can install and configure the Starlight Versions plugin.
+
+import { Steps } from '@astrojs/starlight/components'
+import { PackageManagers } from 'starlight-package-managers'
+
+<Steps>
+
+1. Starlight Versions is a Starlight [plugin](https://starlight.astro.build/reference/plugins/) that you can install using your favorite package manager:
+
+   <PackageManagers pkg="starlight-versions" />
+
+2. Configure the plugin in your Starlight [configuration](https://starlight.astro.build/reference/configuration/#plugins) in the `astro.config.mjs` file.
+
+   The following example shows how to configure a single version `1.0` for your documentation:
+
+   ```diff lang="js"
+   // astro.config.mjs
+   import starlight from '@astrojs/starlight'
+   import { defineConfig } from 'astro/config'
+   +import starlightVersions from 'starlight-versions'
+
+   export default defineConfig({
+     integrations: [
+       starlight({
+   +      plugins: [
+   +        starlightVersions({
+   +          versions: [{ slug: '1.0' }],
+   +        }),
+   +      ],
+         title: 'My Docs',
+       }),
+     ],
+   })
+   ```
+
+3. Starlight Versions uses Astro’s [content collections](https://docs.astro.build/en/guides/content-collections/), which are configured in the `src/content/config.ts` file.
+
+   Update the content config file, adding a `versions` collection that uses Starlight Versions `docsVersionsSchema`:
+
+   ```diff lang="js"
+   // src/content/config.ts
+   import { docsSchema } from '@astrojs/starlight/schema'
+   import { defineCollection } from 'astro:content'
+   +import { docsVersionsSchema } from 'starlight-versions/schema'
+
+   export const collections = {
+     docs: defineCollection({ schema: docsSchema() }),
+   +  versions: defineCollection({ type: 'data', schema: docsVersionsSchema() }),
+   }
+   ```
+
+4. [Start the development server](https://starlight.astro.build/getting-started/#start-the-development-server) to create the first version of your documentation.
+
+   The current state of your documentation will be archived as the newly configured `1.0` version while you continue to work on the current version.
+
+</Steps>
+
+Learn more about versioning in the [“Create a New Version”](/guides/create-new-version/) guide or how to configure the plugin in the [configuration](/configuration/) reference.
