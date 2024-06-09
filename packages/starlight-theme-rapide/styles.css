@@ -21,10 +21,9 @@
 
 .sl-markdown-content a:not(:where(.not-content *)) {
   color: var(--sl-color-white);
-  text-decoration-color: var(--sl-color-gray-2);
   text-underline-offset: 0.25em;
 }
 
 .sl-markdown-content a:is(:hover, :focus-visible):not(:where(.not-content *)) {
-  text-decoration-color: var(--sl-color-accent-high);
+  color: var(--sl-color-accent-high);
 }
