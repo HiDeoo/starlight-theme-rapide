@@ -1,0 +1,9 @@
+:root,
+::backdrop {
+  --sl-color-black: red;
+}
+
+:root[data-theme='light'],
+[data-theme='light'] ::backdrop {
+  --sl-color-black: green;
+}
