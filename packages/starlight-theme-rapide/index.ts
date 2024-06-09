@@ -12,6 +12,13 @@ export default function starlightThemeRapidePlugin(): StarlightPlugin {
               ? false
               : {
                   ...(typeof config.expressiveCode === 'object' ? config.expressiveCode : {}),
+                  styleOverrides: {
+                    borderColor: 'var(--sl-color-gray-6)',
+                    borderRadius: '0.5rem',
+                    frames: {
+                      frameBoxShadowCssValue: 'unset',
+                    },
+                  },
                   themes: ['vitesse-dark', 'vitesse-light'],
                 },
         })

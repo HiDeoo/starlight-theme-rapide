@@ -1,9 +1,30 @@
 :root,
 ::backdrop {
-  --sl-color-black: red;
+  /* // TODO(HiDeoo) Ensure all props from SL are overriden. */
+
+  /* // TODO(HiDeoo) Ensure all colors from SL are overriden. */
+  --sl-color-white: hsl(0, 0%, 100%);
+  --sl-color-gray-2: hsl(45 14% 78%);
+  --sl-color-gray-5: hsl(0 4% 21%);
+  --sl-color-gray-6: hsl(0 4% 16%);
+  --sl-color-black: hsl(0 4% 8%);
+
+  /* // TODO(HiDeoo) other accents */
+  --sl-color-accent-high: hsl(154 31% 44%);
 }
 
 :root[data-theme='light'],
 [data-theme='light'] ::backdrop {
+  /* // TODO(HiDeoo)  */
   --sl-color-black: green;
+}
+
+.sl-markdown-content a:not(:where(.not-content *)) {
+  color: var(--sl-color-white);
+  text-decoration-color: var(--sl-color-gray-2);
+  text-underline-offset: 0.25em;
+}
+
+.sl-markdown-content a:is(:hover, :focus-visible):not(:where(.not-content *)) {
+  text-decoration-color: var(--sl-color-accent-high);
 }
