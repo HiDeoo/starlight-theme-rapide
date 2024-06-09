@@ -53,6 +53,9 @@ importers:
       starlight-package-managers:
         specifier: ^0.6.0
         version: 0.6.0(@astrojs/starlight@0.24.0(astro@4.10.1(@types/node@17.0.45)(typescript@5.4.5)))(astro@4.10.1(@types/node@17.0.45)(typescript@5.4.5))
+      starlight-theme-rapide:
+        specifier: workspace:*
+        version: link:../packages/starlight-theme-rapide
 
   packages/starlight-theme-rapide:
     dependencies:

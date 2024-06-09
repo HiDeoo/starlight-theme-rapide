@@ -1,5 +1,6 @@
 import starlight from '@astrojs/starlight'
 import { defineConfig } from 'astro/config'
+import starlightThemeRapide from 'starlight-theme-rapide'
 
 export default defineConfig({
   integrations: [
@@ -8,6 +9,7 @@ export default defineConfig({
       editLink: {
         baseUrl: 'https://github.com/HiDeoo/starlight-theme-rapide/edit/main/docs/',
       },
+      plugins: [starlightThemeRapide()],
       sidebar: [
         {
           label: 'Start Here',
