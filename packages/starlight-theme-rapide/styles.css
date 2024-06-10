@@ -83,13 +83,6 @@ div.sidebar-pane .top-level > li + li {
   padding-top: 0;
 }
 
-/* Table of contents */
-
-.right-sidebar {
-  border-inline-start: unset;
-  padding-top: calc(var(--sl-nav-height) + 1.75rem);
-}
-
 /* Content */
 
 .meta {
@@ -106,6 +99,32 @@ div.sidebar-pane .top-level > li + li {
 .meta a:is(:hover, :focus-visible) {
   border-color: var(--sl-color-gray-2);
   color: var(--sl-color-gray-2);
+}
+
+/* Table of contents */
+
+.right-sidebar {
+  border-inline-start: unset;
+  padding-top: calc(var(--sl-nav-height) + 1.75rem);
+}
+
+starlight-toc li > a {
+  border-inline-start: 1px solid var(--sl-color-hairline-light);
+  border-radius: 0;
+  margin-inline-start: 0.35rem;
+  padding-inline-start: calc(1rem * var(--depth) + var(--pad-inline) + 0.35rem);
+}
+
+starlight-toc li > a[aria-current='true'] {
+  border-color: var(--sl-color-accent-high);
+}
+
+starlight-toc li > a[aria-current='true']:is(:hover, :focus-visible) {
+  color: var(--sl-color-accent-high);
+}
+
+starlight-toc li > a:not([aria-current='true']):is(:hover, :focus-visible) {
+  border-color: var(--sl-color-white);
 }
 
 /* Markdown */
