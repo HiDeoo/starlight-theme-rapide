@@ -111,9 +111,14 @@ div.sidebar-pane .top-level > li + li {
 
 .sl-markdown-content th:not(:where(.not-content *)) {
   border-bottom: 1px solid var(--sl-color-white);
-  /* color: var(--sl-color-white); */
 }
 
 .sl-markdown-content td:not(:where(.not-content *)) {
   border-bottom: 1px solid var(--sl-color-gray-5);
+}
+
+.sl-markdown-content details:not(:where(.not-content *)) {
+  --sl-details-border-color--hover: var(--sl-color-white);
+
+  border-inline-start-width: 1px;
 }

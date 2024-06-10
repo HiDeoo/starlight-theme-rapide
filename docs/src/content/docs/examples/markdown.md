@@ -67,4 +67,9 @@ Fusce tincidunt urna at [ultricies](#_) sollicitudin.
 
 ## Details
 
-// TODO(HiDeoo)
+<details>
+<summary>Where and when is the Andromeda constellation most visible?</summary>
+
+The [Andromeda constellation](<https://en.wikipedia.org/wiki/Andromeda_(constellation)>) is most visible in the night sky during the month of November at latitudes between `+90°` and `−40°`.
+
+</details>
