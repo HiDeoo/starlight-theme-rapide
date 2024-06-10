@@ -15,6 +15,13 @@
   /* // TODO(HiDeoo) others */
   --sl-color-bg-nav: var(--sl-color-black);
   --sl-color-bg-sidebar: var(--sl-color-black);
+
+  --sl-text-h1: var(--sl-text-3xl);
+  --sl-text-h2: var(--sl-text-2xl);
+  --sl-text-h3: var(--sl-text-xl);
+  --sl-text-h4: var(--sl-text-lg);
+  --sl-text-h5: unset;
+  --sl-text-h6: unset;
 }
 
 :root[data-theme='light'],
