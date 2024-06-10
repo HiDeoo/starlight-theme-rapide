@@ -180,5 +180,29 @@ starlight-tabs ul[role='tablist'] a[role='tab'] {
 
 .card {
   border-radius: 0.5rem;
-  padding: clamp(1rem, calc(0.125rem + 2vw), 2.5rem);
+  padding: clamp(1rem, calc(0.125rem + 1.5vw), 2.5rem);
+}
+
+.sl-link-card {
+  box-shadow: none;
+}
+
+.sl-link-card:hover {
+  background: unset;
+}
+
+.sl-link-card .title {
+  color: var(--sl-color-white);
+}
+
+.sl-link-card .description {
+  color: var(--sl-color-gray-3);
+}
+
+.sl-link-card:is(:hover, :focus-visible) .description {
+  color: var(--sl-color-gray-2);
+}
+
+.sl-link-card .icon {
+  color: var(--sl-color-gray-2);
 }
