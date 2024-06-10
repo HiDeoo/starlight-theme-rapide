@@ -4,7 +4,8 @@
 
   /* // TODO(HiDeoo) Ensure all colors from SL are overriden. */
   --sl-color-white: hsl(0, 0%, 100%);
-  --sl-color-gray-2: hsl(45 14% 78%);
+  --sl-color-gray-2: hsl(0 14% 78%);
+  --sl-color-gray-3: hsl(0 5% 58%);
   --sl-color-gray-5: hsl(0 4% 21%);
   --sl-color-gray-6: hsl(0 4% 16%);
   --sl-color-black: hsl(0 4% 7%);
