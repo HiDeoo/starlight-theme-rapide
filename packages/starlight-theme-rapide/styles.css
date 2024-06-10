@@ -6,8 +6,8 @@
   --sl-color-white: hsl(0, 0%, 100%);
   --sl-color-gray-2: hsl(0 14% 78%);
   --sl-color-gray-3: hsl(0 5% 58%);
-  --sl-color-gray-5: hsl(0 4% 21%);
-  --sl-color-gray-6: hsl(0 4% 16%);
+  --sl-color-gray-5: hsl(0 4% 18%);
+  --sl-color-gray-6: hsl(0 4% 12%);
   --sl-color-black: hsl(0 4% 7%);
 
   /* // TODO(HiDeoo) other accents */
@@ -83,8 +83,6 @@ div.sidebar-pane .top-level > li + li {
   padding-top: 0;
 }
 
-/* Content */
-
 .meta {
   align-items: center;
   flex-direction: row-reverse;
@@ -136,6 +134,10 @@ starlight-toc li > a:not([aria-current='true']):is(:hover, :focus-visible) {
 
 .sl-markdown-content a:is(:hover, :focus-visible):not(:where(.not-content *)) {
   color: var(--sl-color-accent-high);
+}
+
+.sl-markdown-content code:not(:where(.not-content *)) {
+  border-radius: 5px;
 }
 
 .sl-markdown-content tr:nth-child(2n):not(:where(.not-content *)) {
