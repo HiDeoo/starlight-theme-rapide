@@ -161,3 +161,13 @@ starlight-toc li > a:not([aria-current='true']):is(:hover, :focus-visible) {
 
   border-inline-start-width: 1px;
 }
+
+/* Tabs */
+
+starlight-tabs ul[role='tablist'] {
+  border-bottom-width: 1px;
+}
+
+starlight-tabs ul[role='tablist'] a[role='tab'] {
+  padding-block: 0.25rem;
+}
