@@ -90,6 +90,24 @@ div.sidebar-pane .top-level > li + li {
   padding-top: calc(var(--sl-nav-height) + 1.75rem);
 }
 
+/* Content */
+
+.meta {
+  align-items: center;
+  flex-direction: row-reverse;
+}
+
+.meta a {
+  border: 1px solid var(--sl-color-gray-5);
+  border-radius: 0.5rem;
+  padding: 0.25rem 0.5rem;
+}
+
+.meta a:is(:hover, :focus-visible) {
+  border-color: var(--sl-color-gray-2);
+  color: var(--sl-color-gray-2);
+}
+
 /* Markdown */
 
 .sl-markdown-content a:not(:where(.not-content *)) {
