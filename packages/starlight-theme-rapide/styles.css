@@ -100,3 +100,20 @@ div.sidebar-pane .top-level > li + li {
 .sl-markdown-content a:is(:hover, :focus-visible):not(:where(.not-content *)) {
   color: var(--sl-color-accent-high);
 }
+
+.sl-markdown-content tr:nth-child(2n):not(:where(.not-content *)) {
+  background-color: color-mix(in hsl, var(--sl-color-gray-6) 30%, transparent);
+}
+
+.sl-markdown-content :is(th, td):not(:where(.not-content *)) {
+  border: none;
+}
+
+.sl-markdown-content th:not(:where(.not-content *)) {
+  border-bottom: 1px solid var(--sl-color-white);
+  /* color: var(--sl-color-white); */
+}
+
+.sl-markdown-content td:not(:where(.not-content *)) {
+  border-bottom: 1px solid var(--sl-color-gray-5);
+}
