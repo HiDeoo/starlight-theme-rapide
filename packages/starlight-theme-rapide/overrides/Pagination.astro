@@ -1,0 +1,76 @@
+---
+import { Icon } from '@astrojs/starlight/components'
+import type { Props } from '@astrojs/starlight/props'
+
+const { dir, labels, pagination } = Astro.props
+const { prev, next } = pagination
+const isRtl = dir === 'rtl'
+---
+
+<div class="pagination-links" dir={dir}>
+  {
+    prev && (
+      <a href={prev.href} rel="prev">
+        <div>
+          <Icon name={isRtl ? 'right-arrow' : 'left-arrow'} size="1.25rem" />
+          {labels['page.previousLink']}
+        </div>
+        <p class="link-title">{prev.label}</p>
+      </a>
+    )
+  }
+  {
+    next && (
+      <a href={next.href} rel="next">
+        <div>
+          {labels['page.nextLink']}
+          <Icon name={isRtl ? 'left-arrow' : 'right-arrow'} size="1.25rem" />
+        </div>
+        <p class="link-title">{next.label}</p>
+      </a>
+    )
+  }
+</div>
+
+<style>
+  .pagination-links {
+    border-top: 1px solid var(--sl-color-gray-5);
+    display: flex;
+    padding-top: 1.5rem;
+  }
+
+  .pagination-links a {
+    text-decoration: none;
+  }
+
+  .pagination-links a div {
+    align-items: center;
+    color: var(--sl-color-gray-3);
+    display: flex;
+    font-size: var(--sl-text-sm);
+    gap: 0.15rem;
+  }
+
+  .pagination-links a p {
+    color: var(--sl-color-gray-2);
+    font-weight: 600;
+    margin-inline: 0.25rem;
+  }
+
+  .pagination-links a:is(:hover, :focus-visible) div {
+    color: var(--sl-color-gray-2);
+  }
+
+  .pagination-links a:is(:hover, :focus-visible) p {
+    color: var(--sl-color-white);
+  }
+
+  [rel='next'] {
+    margin-left: auto;
+    text-align: end;
+  }
+
+  [rel='next'] div {
+    justify-content: flex-end;
+  }
+</style>
