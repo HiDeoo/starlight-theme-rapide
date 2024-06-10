@@ -171,3 +171,14 @@ starlight-tabs ul[role='tablist'] {
 starlight-tabs ul[role='tablist'] a[role='tab'] {
   padding-block: 0.25rem;
 }
+
+/* Cards */
+
+.card-grid.stagger {
+  --stagger-height: 2.5rem;
+}
+
+.card {
+  border-radius: 0.5rem;
+  padding: clamp(1rem, calc(0.125rem + 2vw), 2.5rem);
+}
