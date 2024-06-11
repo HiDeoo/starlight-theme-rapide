@@ -41,6 +41,10 @@
   --sl-text-h4: var(--sl-text-lg);
   --sl-text-h5: unset;
   --sl-text-h6: unset;
+
+  --sl-rapide-ec-border-color: oklch(from var(--sl-color-gray-6) calc(l + 0.05) c h);
+  --sl-rapide-ec-marker-bg-color: oklch(27% 0.002 17);
+  --sl-rapide-ec-marker-border-color: oklch(47% 0.002 17);
 }
 
 :root[data-theme='light'],
@@ -178,6 +182,10 @@ starlight-toc li > a:not([aria-current='true']):is(:hover, :focus-visible) {
   --sl-details-border-color--hover: var(--sl-color-white);
 
   border-inline-start-width: 1px;
+}
+
+.sl-markdown-content .expressive-code .frame.is-terminal .header {
+  border-bottom: 1px solid var(--sl-rapide-ec-border-color);
 }
 
 /* Tabs */
