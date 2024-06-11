@@ -14,7 +14,10 @@
   --sl-color-orange-low: oklch(24% 0.01 var(--sl-hue-orange));
   --sl-color-orange: oklch(62% 0.115 var(--sl-hue-orange));
   --sl-color-orange-high: oklch(92% 0.062 var(--sl-hue-orange));
-  /* // TODO(HiDeoo) green */
+  --sl-hue-green: 164;
+  --sl-color-green-low: oklch(20% 0.018 var(--sl-hue-green));
+  --sl-color-green: oklch(61% 0.115 var(--sl-hue-green));
+  --sl-color-green-high: oklch(86% 0.054 var(--sl-hue-green));
   --sl-hue-blue: 274;
   --sl-color-blue-low: oklch(20% 0.02 var(--sl-hue-blue));
   --sl-color-blue: oklch(56% 0.181 var(--sl-hue-blue));
