@@ -10,15 +10,19 @@
   --sl-color-gray-6: hsl(0 4% 12%);
   --sl-color-black: hsl(0 4% 7%);
 
-  --sl-color-blue-low: hsla(var(--sl-hue-blue) 54% 20% / 0.3);
-  --sl-color-blue: hsl(var(--sl-hue-blue) 65% 60%);
-  --sl-color-blue-high: hsl(var(--sl-hue-blue) 65% 87%);
-  --sl-color-purple-low: hsla(var(--sl-hue-purple) 34% 18% / 0.3);
-  --sl-color-purple: hsl(var(--sl-hue-purple) 45% 55%);
-  --sl-color-purple-high: hsl(var(--sl-hue-purple) 45% 85%);
+  --sl-hue-orange: 41;
   --sl-color-orange-low: hsla(var(--sl-hue-orange) 54% 15% / 0.3);
   --sl-color-orange: hsl(var(--sl-hue-orange) 65% 40%);
   --sl-color-orange-high: hsl(var(--sl-hue-orange) 85% 85%);
+  /* // TODO(HiDeoo) green */
+  --sl-hue-blue: 234;
+  --sl-color-blue-low: hsla(var(--sl-hue-blue) 54% 20% / 0.3);
+  --sl-color-blue: hsl(var(--sl-hue-blue) 65% 60%);
+  --sl-color-blue-high: hsl(var(--sl-hue-blue) 65% 87%);
+  --sl-hue-purple: 281;
+  --sl-color-purple-low: hsla(var(--sl-hue-purple) 34% 18% / 0.3);
+  --sl-color-purple: hsl(var(--sl-hue-purple) 45% 55%);
+  --sl-color-purple-high: hsl(var(--sl-hue-purple) 45% 85%);
   --sl-hue-red: 350;
   --sl-color-red-low: hsla(var(--sl-hue-red) 54% 14% / 0.3);
   --sl-color-red: hsl(var(--sl-hue-red) 65% 35%);
@@ -223,41 +227,50 @@ starlight-tabs ul[role='tablist'] a[role='tab'] {
 
 /* Asides */
 
-.starlight-aside {
-  border: 1px solid var(--sl-color-asides-border);
-  border-radius: 0.5rem;
-}
-
 .starlight-aside.starlight-aside--note {
-  color: var(--sl-color-blue-high);
+  --sl-rapide-asides-color: var(--sl-color-blue-high);
+  --sl-rapide-asides-link-color: hsl(var(--sl-hue-blue) 65% 90%);
+  --sl-rapide-asides-link-hover-color: hsl(var(--sl-hue-blue) 65% 65%);
+  --sl-rapide-asides-tr-alt-base-color: var(--sl-color-blue-low);
 }
 
 .starlight-aside.starlight-aside--tip {
-  color: var(--sl-color-purple-high);
+  --sl-rapide-asides-color: var(--sl-color-purple-high);
+  --sl-rapide-asides-link-color: hsl(var(--sl-hue-purple) 45% 88%);
+  --sl-rapide-asides-link-hover-color: hsl(var(--sl-hue-purple) 45% 60%);
+  --sl-rapide-asides-tr-alt-base-color: var(--sl-color-purple-low);
 }
 
 .starlight-aside.starlight-aside--caution {
-  color: var(--sl-color-orange-high);
+  --sl-rapide-asides-color: var(--sl-color-orange-high);
+  --sl-rapide-asides-link-color: hsl(var(--sl-hue-orange) 85% 88%);
+  --sl-rapide-asides-link-hover-color: hsl(var(--sl-hue-orange) 65% 50%);
+  --sl-rapide-asides-tr-alt-base-color: var(--sl-color-orange-low);
 }
 
 .starlight-aside.starlight-aside--danger {
-  color: var(--sl-color-red-high);
+  --sl-rapide-asides-color: var(--sl-color-red-high);
+  --sl-rapide-asides-link-color: hsl(var(--sl-hue-red) 65% 90%);
+  --sl-rapide-asides-link-hover-color: hsl(var(--sl-hue-red) 65% 60%);
+  --sl-rapide-asides-tr-alt-base-color: var(--sl-color-red-low);
 }
 
-.starlight-aside.starlight-aside--note tr:nth-child(2n) {
-  background-color: color-mix(in hsl, var(--sl-color-blue-low) 75%, transparent);
+.starlight-aside {
+  border: 1px solid var(--sl-color-asides-border);
+  border-radius: 0.5rem;
+  color: var(--sl-rapide-asides-color);
 }
 
-.starlight-aside.starlight-aside--tip tr:nth-child(2n) {
-  background-color: color-mix(in hsl, var(--sl-color-purple-low) 75%, transparent);
+.starlight-aside a {
+  color: var(--sl-rapide-asides-link-color);
 }
 
-.starlight-aside.starlight-aside--caution tr:nth-child(2n) {
-  background-color: color-mix(in hsl, var(--sl-color-orange-low) 75%, transparent);
+.starlight-aside a:is(:hover, :focus-visible) {
+  color: var(--sl-rapide-asides-link-hover-color);
 }
 
-.starlight-aside.starlight-aside--danger tr:nth-child(2n) {
-  background-color: color-mix(in hsl, var(--sl-color-red-low) 75%, transparent);
+.starlight-aside tr:nth-child(2n) {
+  background-color: color-mix(in hsl, var(--sl-rapide-asides-tr-alt-base-color) 75%, transparent);
 }
 
 .starlight-aside td {
