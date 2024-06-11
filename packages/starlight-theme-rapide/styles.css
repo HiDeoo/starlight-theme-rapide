@@ -29,6 +29,7 @@
   --sl-color-red-high: oklch(87% 0.05 var(--sl-hue-red));
 
   /* // TODO(HiDeoo) other accents */
+  --sl-color-accent-low: oklch(15% 0.085 164);
   --sl-color-accent-high: oklch(61% 0.085 164);
 
   /* // TODO(HiDeoo) others */
@@ -42,7 +43,9 @@
   --sl-text-h5: unset;
   --sl-text-h6: unset;
 
-  --sl-rapide-ec-border-color: oklch(from var(--sl-color-gray-6) calc(l + 0.05) c h);
+  --sl-rapide-ui-bg-color: oklch(18% 0 0);
+  --sl-rapide-ui-border-color: oklch(from var(--sl-color-gray-6) calc(l + 0.05) c h);
+
   --sl-rapide-ec-marker-bg-color: oklch(27% 0.002 17);
   --sl-rapide-ec-marker-border-color: oklch(47% 0.002 17);
 }
@@ -87,7 +90,7 @@ div.sidebar-pane ul ul li:has(> a[aria-current='page']) {
 }
 
 div.sidebar-pane ul ul li:has(> a:not([aria-current='page']):is(:hover, :focus-visible)) {
-  border-inline-start-color: var(--sl-color-white);
+  border-inline-start-color: var(--sl-color-gray-2);
 }
 
 div.sidebar-pane .top-level > li + li {
@@ -144,7 +147,7 @@ starlight-toc li > a[aria-current='true']:is(:hover, :focus-visible) {
 }
 
 starlight-toc li > a:not([aria-current='true']):is(:hover, :focus-visible) {
-  border-color: var(--sl-color-white);
+  border-color: var(--sl-color-gray-2);
 }
 
 /* Markdown */
@@ -179,13 +182,13 @@ starlight-toc li > a:not([aria-current='true']):is(:hover, :focus-visible) {
 }
 
 .sl-markdown-content details:not(:where(.not-content *)) {
-  --sl-details-border-color--hover: var(--sl-color-white);
+  --sl-details-border-color--hover: var(--sl-color-gray-2);
 
   border-inline-start-width: 1px;
 }
 
 .sl-markdown-content .expressive-code .frame.is-terminal .header {
-  border-bottom: 1px solid var(--sl-rapide-ec-border-color);
+  border-bottom: 1px solid var(--sl-rapide-ui-border-color);
 }
 
 /* Tabs */
@@ -276,4 +279,16 @@ starlight-tabs ul[role='tablist'] a[role='tab']:not([aria-selected='true']):hove
 
 .starlight-aside td {
   border-color: oklch(from var(--sl-color-asides-text-accent) calc(l - 0.5) calc(c - 0.02) h);
+}
+
+/* File Tree */
+
+starlight-file-tree {
+  background-color: var(--sl-rapide-ui-bg-color);
+  border: 1px solid var(--sl-rapide-ui-border-color);
+  border-radius: 0.5rem;
+}
+
+starlight-file-tree .directory > details > summary:hover ~ ul {
+  border-color: var(--sl-color-gray-2);
 }

@@ -16,12 +16,12 @@ export default function starlightThemeRapidePlugin(): StarlightPlugin {
               : {
                   ...(typeof config.expressiveCode === 'object' ? config.expressiveCode : {}),
                   styleOverrides: {
-                    borderColor: 'var(--sl-rapide-ec-border-color)',
+                    borderColor: 'var(--sl-rapide-ui-border-color)',
                     borderRadius: '0.5rem',
                     frames: {
                       editorActiveTabIndicatorTopColor: 'unset',
                       editorActiveTabIndicatorBottomColor: 'var(--sl-color-gray-3)',
-                      editorTabBarBorderBottomColor: 'var(--sl-rapide-ec-border-color)',
+                      editorTabBarBorderBottomColor: 'var(--sl-rapide-ui-border-color)',
                       frameBoxShadowCssValue: 'unset',
                     },
                     textMarkers: {
