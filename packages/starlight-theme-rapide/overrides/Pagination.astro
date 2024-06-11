@@ -7,30 +7,30 @@ const { prev, next } = pagination
 const isRtl = dir === 'rtl'
 ---
 
-<div class="pagination-links" dir={dir}>
-  {
-    prev && (
-      <a href={prev.href} rel="prev">
-        <div>
-          <Icon name={isRtl ? 'right-arrow' : 'left-arrow'} size="1.25rem" />
-          {labels['page.previousLink']}
-        </div>
-        <p class="link-title">{prev.label}</p>
-      </a>
-    )
-  }
-  {
-    next && (
-      <a href={next.href} rel="next">
-        <div>
-          {labels['page.nextLink']}
-          <Icon name={isRtl ? 'left-arrow' : 'right-arrow'} size="1.25rem" />
-        </div>
-        <p class="link-title">{next.label}</p>
-      </a>
-    )
-  }
-</div>
+{
+  (prev || next) && (
+    <div class="pagination-links" dir={dir}>
+      {prev && (
+        <a href={prev.href} rel="prev">
+          <div>
+            <Icon name={isRtl ? 'right-arrow' : 'left-arrow'} size="1.25rem" />
+            {labels['page.previousLink']}
+          </div>
+          <p class="link-title">{prev.label}</p>
+        </a>
+      )}
+      {next && (
+        <a href={next.href} rel="next">
+          <div>
+            {labels['page.nextLink']}
+            <Icon name={isRtl ? 'left-arrow' : 'right-arrow'} size="1.25rem" />
+          </div>
+          <p class="link-title">{next.label}</p>
+        </a>
+      )}
+    </div>
+  )
+}
 
 <style>
   .pagination-links {
