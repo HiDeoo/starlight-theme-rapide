@@ -8,7 +8,18 @@ export default function starlightThemeRapidePlugin(): StarlightPlugin {
     hooks: {
       setup({ config, logger, updateConfig }) {
         updateConfig({
-          components: overrideComponents(config, ['Pagination'], logger),
+          components: overrideComponents(
+            config,
+            [
+              'Pagination',
+              'Banner',
+              {
+                name: 'PageTitle',
+                fallback: 'Banner',
+              },
+            ],
+            logger,
+          ),
           customCss: [...(config.customCss ?? []), 'starlight-theme-rapide/styles'],
           expressiveCode:
             config.expressiveCode === false
@@ -25,7 +36,7 @@ export default function starlightThemeRapidePlugin(): StarlightPlugin {
                       frameBoxShadowCssValue: 'unset',
                     },
                     textMarkers: {
-                      backgroundOpacity: '50%',
+                      backgroundOpacity: '40%',
                       markBackground: 'var(--sl-rapide-ec-marker-bg-color)',
                       markBorderColor: 'var(--sl-rapide-ec-marker-border-color)',
                     },
