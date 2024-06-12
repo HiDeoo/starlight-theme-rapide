@@ -89,8 +89,17 @@ div.sidebar-pane summary {
   padding-inline: calc(var(--sl-sidebar-item-padding-inline) / 2) var(--sl-sidebar-item-padding-inline);
 }
 
+div.sidebar-pane summary:is(:hover, :focus-visible),
+div.sidebar-pane summary:is(:hover, :focus-visible) .large {
+  color: var(--sl-color-accent-high);
+}
+
 div.sidebar-pane ul ul li {
   margin-inline-start: calc(var(--sl-sidebar-item-padding-inline) + (0.625rem / 2));
+}
+
+div.sidebar-pane summary:is(:hover, :focus-visible) + ul > li {
+  border-inline-start-color: var(--sl-color-accent-high);
 }
 
 div.sidebar-pane a[aria-current='page'] {
