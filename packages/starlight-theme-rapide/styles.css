@@ -57,7 +57,12 @@
   --sl-text-h6: unset;
 
   --sl-rapide-ui-bg-color: oklch(18% 0 0);
-  --sl-rapide-ui-border-color: oklch(from var(--sl-color-gray-6) calc(l + 0.05) c h);
+  /**
+   * As of 06/12/2024, Firefox does not support relative Oklch colors.
+   *
+   * --sl-rapide-ui-border-color: oklch(from var(--sl-color-gray-6) calc(l + 0.05) c h);
+   */
+  --sl-rapide-ui-border-color: oklch(28% 0.004 17);
 
   --sl-rapide-ec-marker-bg-color: oklch(27% 0.002 17);
   --sl-rapide-ec-marker-border-color: oklch(47% 0.002 17);
@@ -72,7 +77,21 @@
 /* Header */
 
 header.header {
+  /**
+   * As of 06/12/2024, Firefox does not support relative Oklch colors.
+   *
+   * background-color: oklch(from var(--sl-color-black) l c h / 0.6);
+   */
+  background-color: oklch(18% 0.002 17 / 0.6);
+  backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--sl-color-gray-5);
+}
+
+@media (prefers-reduced-transparency) {
+  header.header {
+    background-color: var(--sl-color-black);
+    backdrop-filter: unset;
+  }
 }
 
 /* Sidebar */
@@ -188,7 +207,12 @@ starlight-toc li > a:not([aria-current='true']):is(:hover, :focus-visible) {
 }
 
 .sl-markdown-content tr:nth-child(2n):not(:where(.not-content *)) {
-  background-color: oklch(from var(--sl-color-black) calc(l + 0.025) c h);
+  /**
+   * As of 06/12/2024, Firefox does not support relative Oklch colors.
+   *
+   * background-color: oklch(from var(--sl-color-black) calc(l + 0.025) c h);
+   */
+  background-color: oklch(20.5% 0.002 17);
 }
 
 .sl-markdown-content :is(th, td):not(:where(.not-content *)) {
@@ -269,24 +293,32 @@ starlight-tabs ul[role='tablist'] a[role='tab']:not([aria-selected='true']):hove
   --sl-rapide-asides-bg-color: var(--sl-color-blue-low);
   --sl-rapide-asides-link-color: var(--sl-color-blue-accent);
   --sl-rapide-asides-link-hover-color: var(--sl-color-blue-accent-invert);
+  --sl-rapide-asides-table-alt-color: oklch(21.5% 0.02 var(--sl-hue-blue));
+  --sl-rapide-asides-table-border-color: oklch(36% 0.034 var(--sl-hue-blue));
 }
 
 .starlight-aside.starlight-aside--tip {
   --sl-rapide-asides-bg-color: var(--sl-color-purple-low);
   --sl-rapide-asides-link-color: var(--sl-color-purple-accent);
   --sl-rapide-asides-link-hover-color: var(--sl-color-purple-accent-invert);
+  --sl-rapide-asides-table-alt-color: oklch(23.5% 0.012 var(--sl-hue-purple));
+  --sl-rapide-asides-table-border-color: oklch(36% 0.033 var(--sl-hue-purple));
 }
 
 .starlight-aside.starlight-aside--caution {
   --sl-rapide-asides-bg-color: var(--sl-color-orange-low);
   --sl-rapide-asides-link-color: var(--sl-color-orange-accent);
   --sl-rapide-asides-link-hover-color: var(--sl-color-orange-accent-invert);
+  --sl-rapide-asides-table-alt-color: oklch(25.5% 0.01 var(--sl-hue-orange));
+  --sl-rapide-asides-table-border-color: oklch(42% 0.042 var(--sl-hue-orange));
 }
 
 .starlight-aside.starlight-aside--danger {
   --sl-rapide-asides-bg-color: var(--sl-color-red-low);
   --sl-rapide-asides-link-color: var(--sl-color-red-accent);
   --sl-rapide-asides-link-hover-color: var(--sl-color-red-accent-invert);
+  --sl-rapide-asides-table-alt-color: oklch(21.5% 0.018 var(--sl-hue-red));
+  --sl-rapide-asides-table-border-color: oklch(37% 0.03 var(--sl-hue-red));
 }
 
 .starlight-aside {
@@ -304,11 +336,21 @@ starlight-tabs ul[role='tablist'] a[role='tab']:not([aria-selected='true']):hove
 }
 
 .starlight-aside tr:nth-child(2n) {
-  background-color: oklch(from var(--sl-rapide-asides-bg-color) calc(l + 0.015) c h);
+  /**
+   * As of 06/12/2024, Firefox does not support relative Oklch colors.
+   *
+   * background-color: oklch(from var(--sl-rapide-asides-bg-color) calc(l + 0.015) c h);
+   */
+  background-color: var(--sl-rapide-asides-table-alt-color);
 }
 
 .starlight-aside td {
-  border-color: oklch(from var(--sl-color-asides-text-accent) calc(l - 0.5) calc(c - 0.02) h);
+  /**
+   * As of 06/12/2024, Firefox does not support relative Oklch colors.
+   *
+   * border-color: oklch(from var(--sl-color-asides-text-accent) calc(l - 0.5) calc(c - 0.02) h);
+   */
+  border-color: var(--sl-rapide-asides-table-border-color);
 }
 
 /* File Tree */
@@ -348,7 +390,12 @@ starlight-file-tree .directory > details > summary:hover ~ ul {
 }
 
 .hero .action.primary:is(:hover, :focus-visible) {
-  border-color: oklch(from var(--sl-color-green) calc(l - 0.1) c h);
+  /**
+   * As of 06/12/2024, Firefox does not support relative Oklch colors.
+   *
+   * border-color: oklch(from var(--sl-color-green) calc(l - 0.1) c h);
+   */
+  border-color: oklch(51% 0.115 var(--sl-hue-green));
   color: var(--sl-color-green-accent-invert);
 }
 
