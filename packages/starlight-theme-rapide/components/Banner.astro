@@ -18,11 +18,11 @@ const { banner } = Astro.props.entry['data']
   }
 
   .sl-rapide-banner :global(a) {
-    color: oklch(from var(--sl-color-green-high) calc(l + 0.075) c h);
+    color: var(--sl-color-green-accent);
     text-underline-offset: 0.25em;
   }
 
   .sl-rapide-banner :global(a:is(:hover, :focus-visible)) {
-    color: oklch(from var(--sl-color-green-high) calc(l - 0.2) calc(c + 0.1) h);
+    color: var(--sl-color-green-accent-invert);
   }
 </style>

@@ -14,22 +14,32 @@
   --sl-color-orange-low: oklch(24% 0.01 var(--sl-hue-orange));
   --sl-color-orange: oklch(62% 0.115 var(--sl-hue-orange));
   --sl-color-orange-high: oklch(92% 0.062 var(--sl-hue-orange));
+  --sl-color-orange-accent: oklch(99% 0.062 var(--sl-hue-orange));
+  --sl-color-orange-accent-invert: oklch(72% 0.162 var(--sl-hue-orange));
   --sl-hue-green: 164;
   --sl-color-green-low: oklch(20% 0.018 var(--sl-hue-green));
   --sl-color-green: oklch(61% 0.115 var(--sl-hue-green));
   --sl-color-green-high: oklch(86% 0.054 var(--sl-hue-green));
+  --sl-color-green-accent: oklch(93% 0.054 var(--sl-hue-green));
+  --sl-color-green-accent-invert: oklch(66% 0.154 var(--sl-hue-green));
   --sl-hue-blue: 274;
   --sl-color-blue-low: oklch(20% 0.02 var(--sl-hue-blue));
   --sl-color-blue: oklch(56% 0.181 var(--sl-hue-blue));
   --sl-color-blue-high: oklch(86% 0.054 var(--sl-hue-blue));
+  --sl-color-blue-accent: oklch(93% 0.054 var(--sl-hue-blue));
+  --sl-color-blue-accent-invert: oklch(66% 0.154 var(--sl-hue-blue));
   --sl-hue-purple: 314;
   --sl-color-purple-low: oklch(22% 0.012 var(--sl-hue-purple));
   --sl-color-purple: oklch(59% 0.166 var(--sl-hue-purple));
   --sl-color-purple-high: oklch(86% 0.053 var(--sl-hue-purple));
+  --sl-color-purple-accent: oklch(93% 0.053 var(--sl-hue-purple));
+  --sl-color-purple-accent-invert: oklch(66% 0.153 var(--sl-hue-purple));
   --sl-hue-red: 13;
   --sl-color-red-low: oklch(20% 0.018 var(--sl-hue-red));
   --sl-color-red: oklch(44% 0.151 var(--sl-hue-red));
   --sl-color-red-high: oklch(87% 0.05 var(--sl-hue-red));
+  --sl-color-red-accent: oklch(94% 0.05 var(--sl-hue-red));
+  --sl-color-red-accent-invert: oklch(67% 0.15 var(--sl-hue-red));
 
   /* // TODO(HiDeoo) other accents */
   --sl-color-accent-low: oklch(15% 0.085 164);
@@ -248,18 +258,26 @@ starlight-tabs ul[role='tablist'] a[role='tab']:not([aria-selected='true']):hove
 
 .starlight-aside.starlight-aside--note {
   --sl-rapide-asides-bg-color: var(--sl-color-blue-low);
+  --sl-rapide-asides-link-color: var(--sl-color-blue-accent);
+  --sl-rapide-asides-link-hover-color: var(--sl-color-blue-accent-invert);
 }
 
 .starlight-aside.starlight-aside--tip {
   --sl-rapide-asides-bg-color: var(--sl-color-purple-low);
+  --sl-rapide-asides-link-color: var(--sl-color-purple-accent);
+  --sl-rapide-asides-link-hover-color: var(--sl-color-purple-accent-invert);
 }
 
 .starlight-aside.starlight-aside--caution {
   --sl-rapide-asides-bg-color: var(--sl-color-orange-low);
+  --sl-rapide-asides-link-color: var(--sl-color-orange-accent);
+  --sl-rapide-asides-link-hover-color: var(--sl-color-orange-accent-invert);
 }
 
 .starlight-aside.starlight-aside--danger {
   --sl-rapide-asides-bg-color: var(--sl-color-red-low);
+  --sl-rapide-asides-link-color: var(--sl-color-red-accent);
+  --sl-rapide-asides-link-hover-color: var(--sl-color-red-accent-invert);
 }
 
 .starlight-aside {
@@ -269,11 +287,11 @@ starlight-tabs ul[role='tablist'] a[role='tab']:not([aria-selected='true']):hove
 }
 
 .starlight-aside a {
-  color: oklch(from var(--sl-color-asides-text-accent) calc(l + 0.075) c h);
+  color: var(--sl-rapide-asides-link-color);
 }
 
 .starlight-aside a:is(:hover, :focus-visible) {
-  color: oklch(from var(--sl-color-asides-text-accent) calc(l - 0.2) calc(c + 0.1) h);
+  color: var(--sl-rapide-asides-link-hover-color);
 }
 
 .starlight-aside tr:nth-child(2n) {
@@ -301,4 +319,44 @@ starlight-file-tree .directory > details > summary:hover ~ ul {
 .content-panel:first-of-type h1 + p.sl-flex {
   border-radius: 0.5rem;
   padding: 1rem;
+}
+
+/* Hero */
+
+.hero .action {
+  border: 1px solid transparent;
+  padding: 0.75rem 1rem;
+}
+
+.hero .action svg {
+  font-size: 1.25rem;
+}
+
+.hero .action.primary {
+  background-color: var(--sl-color-green-low);
+  border: 1px solid var(--sl-color-green);
+  color: var(--sl-color-green-high);
+}
+
+.hero .action.primary:is(:hover, :focus-visible) {
+  border-color: oklch(from var(--sl-color-green) calc(l - 0.1) c h);
+  color: var(--sl-color-green-accent-invert);
+}
+
+.hero .action.secondary {
+  border-color: var(--sl-color-gray-2);
+  color: var(--sl-color-gray-2);
+}
+
+.hero .action.secondary:is(:hover, :focus-visible) {
+  border-color: var(--sl-color-accent-high);
+  color: var(--sl-color-accent-high);
+}
+
+.hero .action.minimal:is(:hover, :focus-visible) {
+  color: var(--sl-color-accent-high);
+}
+
+.hero .action.minimal {
+  padding-inline: 0.25rem;
 }
