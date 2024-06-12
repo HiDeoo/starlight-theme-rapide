@@ -295,3 +295,10 @@ starlight-file-tree {
 starlight-file-tree .directory > details > summary:hover ~ ul {
   border-color: var(--sl-color-gray-2);
 }
+
+/* Notices */
+
+.content-panel:first-of-type h1 + p.sl-flex {
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
