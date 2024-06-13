@@ -6,6 +6,7 @@
   --sl-color-white: oklch(90% 0.008 17);
   --sl-color-gray-2: oklch(80% 0.018 17);
   --sl-color-gray-3: oklch(65% 0.013 17);
+  --sl-color-gray-4: oklch(48% 0.009 17);
   --sl-color-gray-5: oklch(29% 0.005 17);
   --sl-color-gray-6: oklch(23% 0.004 17);
   --sl-color-black: oklch(18% 0.002 17);
@@ -49,6 +50,8 @@
   --sl-color-bg-nav: var(--sl-color-black);
   --sl-color-bg-sidebar: var(--sl-color-black);
 
+  --sl-color-backdrop-overlay: oklch(24% 0.002 17 / 0.7);
+
   --sl-text-h1: var(--sl-text-3xl);
   --sl-text-h2: var(--sl-text-2xl);
   --sl-text-h3: var(--sl-text-xl);
@@ -77,21 +80,123 @@
 /* Header */
 
 header.header {
+  -webkit-backdrop-filter: blur(0.5rem);
+  backdrop-filter: blur(0.5rem);
   /**
    * As of 06/12/2024, Firefox does not support relative Oklch colors.
    *
    * background-color: oklch(from var(--sl-color-black) l c h / 0.6);
    */
   background-color: oklch(18% 0.002 17 / 0.6);
-  backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--sl-color-gray-5);
 }
 
 @media (prefers-reduced-transparency) {
   header.header {
+    -webkit-backdrop-filter: initial;
+    backdrop-filter: initial;
     background-color: var(--sl-color-black);
-    backdrop-filter: unset;
   }
+}
+
+/* Search */
+
+@media (min-width: 50rem) {
+  div:has(> site-search) {
+    justify-content: center;
+  }
+}
+
+@media (min-width: 72rem) {
+  div:has(> site-search) {
+    max-width: calc(var(--sl-content-width));
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  site-search dialog::backdrop {
+    animation: sl-rapide-search-backdrop-fade 150ms ease-out;
+  }
+
+  site-search dialog {
+    animation: sl-rapide-search-dialog-zoom-in 150ms ease-out;
+  }
+}
+
+@keyframes sl-rapide-search-backdrop-fade {
+  from {
+    -webkit-backdrop-filter: initial;
+    backdrop-filter: initial;
+    background-color: transparent;
+  }
+
+  to {
+    -webkit-backdrop-filter: blur(0.25rem);
+    backdrop-filter: blur(0.25rem);
+    background-color: var(--sl-color-backdrop-overlay);
+  }
+}
+
+@keyframes sl-rapide-search-dialog-zoom-in {
+  from {
+    opacity: 0;
+    transform: scale(0.5) translateY(-2rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+site-search dialog {
+  background-color: var(--sl-color-black);
+  box-shadow: none;
+  min-height: auto;
+}
+
+site-search dialog .dialog-frame {
+  padding: 1rem;
+}
+
+site-search dialog #starlight__search {
+  --sl-search-corners: calc(0.5rem * var(--pagefind-ui-scale));
+  --pagefind-ui-border-radius: calc(0.5rem * var(--pagefind-ui-scale));
+}
+
+site-search dialog .pagefind-ui .pagefind-ui__search-input {
+  background-color: var(--sl-rapide-ui-bg-color);
+  border: 1px solid var(--sl-color-gray-4);
+}
+
+site-search dialog .pagefind-ui .pagefind-ui__message {
+  padding-top: 0;
+}
+
+site-search dialog .pagefind-ui .pagefind-ui__message:has(+ .pagefind-ui__results:empty) {
+  padding: 0;
+}
+
+site-search
+  dialog
+  #starlight__search
+  .pagefind-ui
+  :is(.pagefind-ui__result-title:not(:where(.pagefind-ui__result-nested *)), .pagefind-ui__result-nested) {
+  background-color: var(--sl-rapide-ui-bg-color);
+  border-inline: 1px solid var(--sl-rapide-ui-border-color);
+  outline-offset: -1px;
+}
+
+site-search dialog #starlight__search .pagefind-ui .pagefind-ui__result-inner {
+  gap: 0;
+}
+
+site-search dialog #starlight__search .pagefind-ui .pagefind-ui__result-inner > :first-child {
+  border-top: 1px solid var(--sl-rapide-ui-border-color);
+}
+
+site-search dialog #starlight__search .pagefind-ui .pagefind-ui__result-inner > :last-child {
+  border-bottom: 1px solid var(--sl-rapide-ui-border-color);
 }
 
 /* Sidebar */
@@ -122,7 +227,7 @@ div.sidebar-pane summary:is(:hover, :focus-visible) + ul > li {
 }
 
 div.sidebar-pane a[aria-current='page'] {
-  background-color: unset;
+  background-color: initial;
   color: var(--sl-color-text-accent);
 }
 
@@ -168,7 +273,7 @@ div.sidebar-pane .top-level > li + li {
 /* Table of contents */
 
 .right-sidebar {
-  border-inline-start: unset;
+  border-inline-start: initial;
   padding-top: calc(var(--sl-nav-height) + 1.75rem);
 }
 
@@ -268,7 +373,7 @@ starlight-tabs ul[role='tablist'] a[role='tab']:not([aria-selected='true']):hove
 }
 
 .sl-link-card:hover {
-  background: unset;
+  background: initial;
 }
 
 .sl-link-card .title {
