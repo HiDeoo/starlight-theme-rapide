@@ -452,6 +452,10 @@ mobile-starlight-toc .dropdown a:is(:hover, :focus-visible) {
 
 /* Tabs */
 
+starlight-tabs .tablist-wrapper {
+  overflow-y: hidden;
+}
+
 starlight-tabs ul[role='tablist'] {
   border-bottom-width: 1px;
 }
@@ -583,6 +587,10 @@ starlight-file-tree .directory > details > summary:hover ~ ul {
 .content-panel:first-of-type h1 + p.sl-flex {
   border-radius: 0.5rem;
   padding: 1rem;
+}
+
+.content-panel:first-of-type h1 + p.sl-flex svg {
+  flex-shrink: 0;
 }
 
 /* Hero */
