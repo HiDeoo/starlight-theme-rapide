@@ -17,6 +17,7 @@ export default function starlightThemeRapidePlugin(): StarlightPlugin {
                 name: 'PageTitle',
                 fallback: 'Banner',
               },
+              'ThemeSelect',
             ],
             logger,
           ),

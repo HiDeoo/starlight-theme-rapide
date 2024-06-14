@@ -11,6 +11,7 @@
     "./overrides/Banner.astro": "./overrides/Banner.astro",
     "./overrides/PageTitle.astro": "./overrides/PageTitle.astro",
     "./overrides/Pagination.astro": "./overrides/Pagination.astro",
+    "./overrides/ThemeSelect.astro": "./overrides/ThemeSelect.astro",
     "./styles": "./styles.css",
     "./package.json": "./package.json"
   },

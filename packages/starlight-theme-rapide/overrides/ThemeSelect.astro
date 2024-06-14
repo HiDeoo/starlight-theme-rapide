@@ -1,0 +1,197 @@
+---
+import type { Props } from '@astrojs/starlight/props'
+
+const { labels } = Astro.props
+
+// https://web.dev/building-a-theme-switch-component/
+// https://github.com/withastro/starlight/blob/9237581c766f68fbb3ce5f9401ca2046f106c7d5/packages/starlight/components/ThemeSelect.astro
+---
+
+<starlight-rapide-theme-select>
+  <button
+    aria-label={labels['themeSelect.accessibleLabel']}
+    aria-live="polite"
+    class="sl-flex"
+    title={labels['themeSelect.accessibleLabel']}
+  >
+    <svg aria-hidden="true" height="20" viewBox="0 0 24 24" width="20">
+      <mask class="moon" id="moon-mask">
+        <rect x="0" y="0" width="100%" height="100%" fill="white"></rect>
+        <circle cx="24" cy="10" r="6" fill="black"></circle>
+      </mask>
+      <circle class="sun" cx="12" cy="12" r="6" mask="url(#moon-mask)" fill="currentColor"></circle>
+      <g class="sun-beams" stroke="currentColor">
+        <line x1="12" y1="1" x2="12" y2="3"></line>
+        <line x1="12" y1="21" x2="12" y2="23"></line>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+        <line x1="1" y1="12" x2="3" y2="12"></line>
+        <line x1="21" y1="12" x2="23" y2="12"></line>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+      </g>
+    </svg>
+  </button>
+</starlight-rapide-theme-select>
+
+<style>
+  starlight-rapide-theme-select {
+    --sl-rapide-theme-select-animation-duration: 400ms;
+    --sl-rapide-theme-select-ease-elastic: cubic-bezier(0.5, 1.25, 0.75, 1.25);
+
+    align-self: stretch;
+  }
+
+  button {
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    height: 100%;
+  }
+
+  svg {
+    stroke-linecap: round;
+  }
+
+  svg :is(.moon, .sun, .sun-beams) {
+    transform-origin: center;
+  }
+
+  svg :is(.moon, .sun) {
+    fill: var(--sl-color-gray-2);
+  }
+
+  svg .sun-beams {
+    stroke: var(--sl-color-gray-2);
+    stroke-width: 2px;
+  }
+
+  button:is(:hover, :focus-visible) svg :is(.moon, .sun) {
+    fill: var(--sl-color-accent-high);
+  }
+
+  button:is(:hover, :focus-visible) svg .sun-beams {
+    stroke: var(--sl-color-accent-high);
+  }
+
+  :global([data-theme='dark']) svg .sun {
+    transform: scale(1.75);
+  }
+
+  :global([data-theme='dark']) svg .sun-beams {
+    opacity: 0;
+  }
+
+  :global([data-theme='dark']) svg .moon circle {
+    transform: translateX(-7px);
+  }
+
+  @supports (cx: 1) {
+    :global([data-theme='dark']) svg .moon circle {
+      cx: 17;
+      transform: translateX(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    svg .sun {
+      transition: transform var(--sl-rapide-theme-select-animation-duration) var(--sl-rapide-theme-select-ease-elastic);
+    }
+
+    svg .sun-beams {
+      transition:
+        opacity var(--sl-rapide-theme-select-animation-duration) ease,
+        transform var(--sl-rapide-theme-select-animation-duration) var(--sl-rapide-theme-select-ease-elastic);
+    }
+
+    svg .moon circle {
+      transition: transform calc(var(--sl-rapide-theme-select-animation-duration) / 2) ease-out;
+    }
+
+    @supports (cx: 1) {
+      svg .moon circle {
+        transition: cx calc(var(--sl-rapide-theme-select-animation-duration) / 2) ease-out;
+      }
+    }
+
+    :global([data-theme='dark']) svg .sun {
+      transform: scale(1.75);
+      transition-duration: calc(var(--sl-rapide-theme-select-animation-duration) / 2);
+      transition-timing-function: ease;
+    }
+
+    :global([data-theme='dark']) svg .sun-beams {
+      transform: rotateZ(-25deg);
+      transition-duration: calc(var(--sl-rapide-theme-select-animation-duration) / 4);
+    }
+
+    :global([data-theme='dark']) svg .moon circle {
+      transition-delay: calc(var(--sl-rapide-theme-select-animation-duration) / 4);
+      transition-duration: var(--sl-rapide-theme-select-animation-duration);
+    }
+  }
+</style>
+
+{/* Inlined to avoid FOUC. Uses global scope from `ThemeProvider.astro` */}
+<script is:inline>
+  StarlightThemeProvider.updatePickers()
+</script>
+
+<script>
+  type Theme = 'auto' | 'dark' | 'light'
+
+  /** Key in `localStorage` to store color theme preference at. */
+  const storageKey = 'starlight-theme'
+
+  /** Get a typesafe theme string from any JS value (unknown values are coerced to `'auto'`). */
+  function parseTheme(theme: unknown): Theme {
+    return theme === 'auto' || theme === 'dark' || theme === 'light' ? theme : 'auto'
+  }
+
+  /** Load the user’s preference from `localStorage`. */
+  function loadTheme(): Theme {
+    return parseTheme(typeof localStorage !== 'undefined' && localStorage.getItem(storageKey))
+  }
+
+  /** Store the user’s preference in `localStorage`. */
+  function storeTheme(theme: Theme): void {
+    if (typeof localStorage !== 'undefined') {
+      localStorage.setItem(storageKey, theme === 'light' || theme === 'dark' ? theme : '')
+    }
+  }
+
+  /** Get the preferred system color scheme. */
+  function getPreferredColorScheme(): Theme {
+    return matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'
+  }
+
+  /** Update select menu UI, document theme, and local storage state. */
+  function onThemeChange(theme: Theme): void {
+    StarlightThemeProvider.updatePickers(theme)
+    document.documentElement.dataset['theme'] = theme === 'auto' ? getPreferredColorScheme() : theme
+    storeTheme(theme)
+  }
+
+  // React to changes in system color scheme.
+  matchMedia(`(prefers-color-scheme: light)`).addEventListener('change', () => {
+    if (loadTheme() === 'auto') onThemeChange('auto')
+  })
+
+  customElements.define(
+    'starlight-rapide-theme-select',
+    class StarlightRapideThemeSelect extends HTMLElement {
+      constructor() {
+        super()
+        onThemeChange(loadTheme())
+        const button = this.querySelector('button')
+        button?.addEventListener('click', () => {
+          const theme = parseTheme(document.documentElement.dataset['theme'])
+          const newTheme = theme === 'dark' ? 'light' : theme === 'light' ? 'dark' : 'auto'
+          onThemeChange(newTheme)
+          button?.setAttribute('aria-label', `${newTheme} theme`)
+        })
+      }
+    },
+  )
+</script>
