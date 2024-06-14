@@ -100,8 +100,10 @@ header.header {
   }
 }
 
-[data-has-sidebar] header.header:not(:has(starlight-lang-select)) {
-  padding-inline-end: calc(var(--sl-nav-pad-x) - 1rem);
+@media (min-width: 50rem) {
+  [data-has-sidebar] header.header:not(:has(starlight-lang-select)) {
+    padding-inline-end: calc(var(--sl-nav-pad-x) - 1rem);
+  }
 }
 
 header.header .site-title {
