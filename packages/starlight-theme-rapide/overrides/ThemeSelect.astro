@@ -1,7 +1,10 @@
 ---
+import crypto from 'node:crypto'
+
 import type { Props } from '@astrojs/starlight/props'
 
 const { labels } = Astro.props
+const id = `moon-mask-${crypto.randomBytes(4).toString('hex')}`
 
 // https://web.dev/building-a-theme-switch-component/
 // https://github.com/withastro/starlight/blob/9237581c766f68fbb3ce5f9401ca2046f106c7d5/packages/starlight/components/ThemeSelect.astro
@@ -15,11 +18,11 @@ const { labels } = Astro.props
     title={labels['themeSelect.accessibleLabel']}
   >
     <svg aria-hidden="true" height="16" viewBox="0 0 24 24" width="16">
-      <mask class="moon" id="moon-mask">
+      <mask class="moon" id={id}>
         <rect x="0" y="0" width="100%" height="100%" fill="white"></rect>
         <circle cx="24" cy="10" r="6" fill="black"></circle>
       </mask>
-      <circle class="sun" cx="12" cy="12" r="6" mask="url(#moon-mask)" fill="currentColor"></circle>
+      <circle class="sun" cx="12" cy="12" r="6" mask={`url(#${id})`}></circle>
       <g class="sun-beams" stroke="currentColor">
         <line x1="12" y1="1" x2="12" y2="3"></line>
         <line x1="12" y1="21" x2="12" y2="23"></line>
