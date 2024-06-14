@@ -18,6 +18,7 @@ export default function starlightThemeRapidePlugin(): StarlightPlugin {
                 fallback: 'Banner',
               },
               'ThemeSelect',
+              'LanguageSelect',
             ],
             logger,
           ),

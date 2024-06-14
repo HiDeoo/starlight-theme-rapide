@@ -99,8 +99,20 @@ header.header {
   }
 }
 
+[data-has-sidebar] header.header:not(:has(starlight-lang-select)) {
+  padding-inline-end: calc(var(--sl-nav-pad-x) - 1rem);
+}
+
 header.header .site-title {
   font-size: var(--sl-text-h3);
+}
+
+header.header .right-group {
+  gap: 0;
+}
+
+header.header .social-icons a:last-child {
+  margin-inline-end: -0.125rem;
 }
 
 header.header .social-icons a {
@@ -110,6 +122,19 @@ header.header .social-icons a {
 header.header .social-icons a:hover {
   color: var(--sl-color-accent-high);
   opacity: 1;
+}
+
+header.header starlight-lang-select select {
+  padding-inline-start: 1.5rem;
+  width: calc(var(--sl-rapide-lang-select-width) + 3rem);
+}
+
+header.header starlight-lang-select label:is(:hover, :focus-visible) {
+  color: var(--sl-color-accent-high);
+}
+
+header.header starlight-lang-select svg.label-icon {
+  font-size: 1rem;
 }
 
 /* Search */
