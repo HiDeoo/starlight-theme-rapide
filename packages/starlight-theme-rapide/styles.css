@@ -99,11 +99,15 @@ header.header {
   }
 }
 
-header .social-icons a {
+header.header .site-title {
+  font-size: var(--sl-text-h3);
+}
+
+header.header .social-icons a {
   color: var(--sl-color-gray-2);
 }
 
-header .social-icons a:hover {
+header.header .social-icons a:hover {
   color: var(--sl-color-accent-high);
   opacity: 1;
 }
