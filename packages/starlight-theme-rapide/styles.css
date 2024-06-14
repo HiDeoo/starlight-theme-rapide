@@ -563,3 +563,17 @@ starlight-file-tree .directory > details > summary:hover ~ ul {
 .hero .action.minimal {
   padding-inline: 0.25rem;
 }
+
+/* Steps */
+
+.sl-steps > li:last-of-type::after {
+  --guide-width: 1px;
+
+  background: linear-gradient(to bottom, var(--sl-color-hairline-light), var(--sl-color-bg) 85%);
+  bottom: var(--bullet-margin);
+  content: '';
+  inset-inline-start: calc((var(--bullet-size) - var(--guide-width)) / 2);
+  position: absolute;
+  top: calc(var(--bullet-size) + var(--bullet-margin));
+  width: var(--guide-width);
+}
