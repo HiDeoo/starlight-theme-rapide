@@ -99,6 +99,15 @@ header.header {
   }
 }
 
+header .social-icons a {
+  color: var(--sl-color-gray-2);
+}
+
+header .social-icons a:hover {
+  color: var(--sl-color-accent-high);
+  opacity: 1;
+}
+
 /* Search */
 
 @media (min-width: 50rem) {
