@@ -42,8 +42,8 @@
   --sl-color-red-accent: oklch(94% 0.05 var(--sl-hue-red));
   --sl-color-red-accent-invert: oklch(67% 0.15 var(--sl-hue-red));
 
-  /* // TODO(HiDeoo) other accents */
   --sl-color-accent-low: oklch(15% 0.085 164);
+  --sl-color-accent: oklch(50% 0.085 164);
   --sl-color-accent-high: oklch(61% 0.085 164);
 
   /* // TODO(HiDeoo) others */
@@ -60,6 +60,12 @@
   --sl-text-h6: unset;
 
   --sl-rapide-ui-bg-color: oklch(18% 0 0);
+  /**
+   * As of 06/12/2024, Firefox does not support relative Oklch colors.
+   *
+   * background-color: oklch(from var(--sl-color-black) l c h / 0.6);
+   */
+  --sl-rapide-ui-header-bg-color: oklch(18% 0.002 17 / 0.8);
   /**
    * As of 06/12/2024, Firefox does not support relative Oklch colors.
    *
@@ -82,12 +88,7 @@
 header.header {
   -webkit-backdrop-filter: blur(0.5rem);
   backdrop-filter: blur(0.5rem);
-  /**
-   * As of 06/12/2024, Firefox does not support relative Oklch colors.
-   *
-   * background-color: oklch(from var(--sl-color-black) l c h / 0.6);
-   */
-  background-color: oklch(18% 0.002 17 / 0.6);
+  background-color: var(--sl-rapide-ui-header-bg-color);
   border-bottom: 1px solid var(--sl-color-gray-5);
 }
 
@@ -207,6 +208,11 @@ site-search dialog .pagefind-ui .pagefind-ui__search-input {
   border: 1px solid var(--sl-color-gray-4);
 }
 
+site-search dialog .pagefind-ui .pagefind-ui__search-input:focus-visible {
+  border-color: var(--sl-color-accent);
+  outline: 1px solid var(--sl-color-accent);
+}
+
 site-search dialog .pagefind-ui .pagefind-ui__message {
   padding-top: 0;
 }
@@ -220,9 +226,18 @@ site-search
   #starlight__search
   .pagefind-ui
   :is(.pagefind-ui__result-title:not(:where(.pagefind-ui__result-nested *)), .pagefind-ui__result-nested) {
-  background-color: var(--sl-rapide-ui-bg-color);
   border-inline: 1px solid var(--sl-rapide-ui-border-color);
   outline-offset: -1px;
+}
+
+site-search
+  dialog
+  #starlight__search
+  .pagefind-ui
+  :is(.pagefind-ui__result-title:not(:where(.pagefind-ui__result-nested *)), .pagefind-ui__result-nested):not(
+    :focus-within
+  ) {
+  background-color: var(--sl-rapide-ui-bg-color);
 }
 
 site-search dialog #starlight__search .pagefind-ui .pagefind-ui__result-inner {
@@ -292,6 +307,16 @@ div.sidebar-pane .top-level > li + li {
   padding-top: 0;
 }
 
+.content-panel h1 {
+  margin-top: 0.5rem;
+}
+
+@media (min-width: 72rem) {
+  .content-panel h1 {
+    margin-top: 1rem;
+  }
+}
+
 .meta {
   align-items: center;
   flex-direction: row-reverse;
@@ -312,7 +337,12 @@ div.sidebar-pane .top-level > li + li {
 
 .right-sidebar {
   border-inline-start: initial;
-  padding-top: calc(var(--sl-nav-height) + 1.75rem);
+}
+
+@media (min-width: 72rem) {
+  .right-sidebar {
+    padding-top: calc(var(--sl-nav-height) + 1.75rem);
+  }
 }
 
 starlight-toc li > a {
@@ -332,6 +362,40 @@ starlight-toc li > a[aria-current='true']:is(:hover, :focus-visible) {
 
 starlight-toc li > a:not([aria-current='true']):is(:hover, :focus-visible) {
   border-color: var(--sl-color-gray-2);
+}
+
+/* Mobile table of contents */
+
+mobile-starlight-toc nav {
+  -webkit-backdrop-filter: blur(0.5rem);
+  backdrop-filter: blur(0.5rem);
+  background-color: var(--sl-rapide-ui-header-bg-color);
+  border-bottom: 1px solid var(--sl-color-gray-5);
+  border-top-color: transparent;
+}
+
+@media (prefers-reduced-transparency) {
+  mobile-starlight-toc nav {
+    -webkit-backdrop-filter: initial;
+    backdrop-filter: initial;
+    background-color: var(--sl-color-black);
+  }
+}
+
+mobile-starlight-toc nav:has(details[open]) {
+  -webkit-backdrop-filter: initial;
+  backdrop-filter: initial;
+  background-color: var(--sl-color-black);
+}
+
+mobile-starlight-toc .dropdown {
+  border: initial;
+  border-bottom: var(--border-top) solid var(--sl-color-gray-6);
+}
+
+mobile-starlight-toc .dropdown a:is(:hover, :focus-visible) {
+  background-color: var(--sl-rapide-ui-bg-color);
+  color: var(--sl-color-accent-high);
 }
 
 /* Markdown */
