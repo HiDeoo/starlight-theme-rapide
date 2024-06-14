@@ -347,6 +347,10 @@ starlight-toc li > a:not([aria-current='true']):is(:hover, :focus-visible) {
   border-inline-start-width: 1px;
 }
 
+.sl-markdown-content .expressive-code .has-title {
+  --ec-uiPadBlk: 0.375rem;
+}
+
 .sl-markdown-content .expressive-code .frame.is-terminal .header {
   border-bottom: 1px solid var(--sl-rapide-ui-border-color);
 }
