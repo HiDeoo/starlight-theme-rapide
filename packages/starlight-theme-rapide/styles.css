@@ -584,12 +584,12 @@ starlight-file-tree .directory > details > summary:hover ~ ul {
 
 /* Notices */
 
-.content-panel:first-of-type h1 + p.sl-flex {
+.content-panel:first-of-type p.sl-flex {
   border-radius: 0.5rem;
   padding: 1rem;
 }
 
-.content-panel:first-of-type h1 + p.sl-flex svg {
+.content-panel:first-of-type p.sl-flex svg {
   flex-shrink: 0;
 }
 
