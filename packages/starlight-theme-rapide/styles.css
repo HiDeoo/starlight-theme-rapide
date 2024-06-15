@@ -320,6 +320,10 @@ site-search dialog #starlight__search .pagefind-ui .pagefind-ui__result-inner > 
   border-bottom: 1px solid var(--sl-rapide-ui-border-color);
 }
 
+site-search dialog #starlight__search .pagefind-ui .pagefind-ui__result-excerpt mark {
+  color: var(--sl-color-accent-high);
+}
+
 /* Sidebar */
 
 div.sidebar-pane {
