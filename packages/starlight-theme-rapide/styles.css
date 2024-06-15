@@ -1,56 +1,68 @@
 :root,
 ::backdrop {
-  /* // TODO(HiDeoo) Ensure all props from SL are overriden. */
-
-  /* // TODO(HiDeoo) Ensure all colors from SL are overriden. */
-  --sl-color-white: oklch(90% 0.008 17);
-  --sl-color-gray-2: oklch(80% 0.018 17);
-  --sl-color-gray-3: oklch(65% 0.013 17);
-  --sl-color-gray-4: oklch(48% 0.009 17);
-  --sl-color-gray-5: oklch(29% 0.005 17);
-  --sl-color-gray-6: oklch(23% 0.004 17);
-  --sl-color-black: oklch(18% 0.002 17);
+  --sl-hue-base: 17;
+  --sl-color-white: oklch(90% 0.008 var(--sl-hue-base));
+  --sl-color-gray-1: oklch(80% 0.018 var(--sl-hue-base));
+  --sl-color-gray-2: oklch(80% 0.018 var(--sl-hue-base));
+  --sl-color-gray-3: oklch(65% 0.013 var(--sl-hue-base));
+  --sl-color-gray-4: oklch(48% 0.009 var(--sl-hue-base));
+  --sl-color-gray-5: oklch(29% 0.005 var(--sl-hue-base));
+  --sl-color-gray-6: oklch(23% 0.004 var(--sl-hue-base));
+  --sl-color-gray-7: oklch(20.5% 0.002 var(--sl-hue-base));
+  --sl-color-black: oklch(18% 0.002 var(--sl-hue-base));
 
   --sl-hue-orange: 84;
   --sl-color-orange-low: oklch(24% 0.01 var(--sl-hue-orange));
   --sl-color-orange: oklch(62% 0.115 var(--sl-hue-orange));
   --sl-color-orange-high: oklch(92% 0.062 var(--sl-hue-orange));
-  --sl-color-orange-accent: oklch(99% 0.062 var(--sl-hue-orange));
-  --sl-color-orange-accent-invert: oklch(72% 0.162 var(--sl-hue-orange));
+  --sl-color-orange-accent: oklch(96% 0.04 var(--sl-hue-orange));
+  --sl-color-orange-accent-invert: oklch(79% 0.162 var(--sl-hue-orange));
+  --sl-color-orange-alt: oklch(25.5% 0.01 var(--sl-hue-orange));
+  --sl-color-orange-alt-invert: oklch(42% 0.042 var(--sl-hue-orange));
   --sl-hue-green: 164;
   --sl-color-green-low: oklch(20% 0.018 var(--sl-hue-green));
   --sl-color-green: oklch(61% 0.115 var(--sl-hue-green));
   --sl-color-green-high: oklch(86% 0.054 var(--sl-hue-green));
   --sl-color-green-accent: oklch(93% 0.054 var(--sl-hue-green));
-  --sl-color-green-accent-invert: oklch(66% 0.154 var(--sl-hue-green));
+  --sl-color-green-accent-invert: oklch(66% 0.14 var(--sl-hue-green));
   --sl-hue-blue: 274;
   --sl-color-blue-low: oklch(20% 0.02 var(--sl-hue-blue));
   --sl-color-blue: oklch(56% 0.181 var(--sl-hue-blue));
   --sl-color-blue-high: oklch(86% 0.054 var(--sl-hue-blue));
-  --sl-color-blue-accent: oklch(93% 0.054 var(--sl-hue-blue));
+  --sl-color-blue-accent: oklch(89% 0.05 var(--sl-hue-blue));
   --sl-color-blue-accent-invert: oklch(66% 0.154 var(--sl-hue-blue));
+  --sl-color-blue-alt: oklch(21.5% 0.02 var(--sl-hue-blue));
+  --sl-color-blue-alt-invert: oklch(36% 0.034 var(--sl-hue-blue));
   --sl-hue-purple: 314;
   --sl-color-purple-low: oklch(22% 0.012 var(--sl-hue-purple));
   --sl-color-purple: oklch(59% 0.166 var(--sl-hue-purple));
   --sl-color-purple-high: oklch(86% 0.053 var(--sl-hue-purple));
-  --sl-color-purple-accent: oklch(93% 0.053 var(--sl-hue-purple));
+  --sl-color-purple-accent: oklch(92% 0.05 var(--sl-hue-purple));
   --sl-color-purple-accent-invert: oklch(66% 0.153 var(--sl-hue-purple));
+  --sl-color-purple-alt: oklch(23.5% 0.012 var(--sl-hue-purple));
+  --sl-color-purple-alt-invert: oklch(36% 0.033 var(--sl-hue-purple));
   --sl-hue-red: 13;
   --sl-color-red-low: oklch(20% 0.018 var(--sl-hue-red));
   --sl-color-red: oklch(44% 0.151 var(--sl-hue-red));
   --sl-color-red-high: oklch(87% 0.05 var(--sl-hue-red));
-  --sl-color-red-accent: oklch(94% 0.05 var(--sl-hue-red));
+  --sl-color-red-accent: oklch(92% 0.04 var(--sl-hue-red));
   --sl-color-red-accent-invert: oklch(67% 0.15 var(--sl-hue-red));
+  --sl-color-red-alt: oklch(21.5% 0.018 var(--sl-hue-red));
+  --sl-color-red-alt-invert: oklch(37% 0.03 var(--sl-hue-red));
 
-  --sl-color-accent-low: oklch(15% 0.085 164);
-  --sl-color-accent: oklch(50% 0.085 164);
-  --sl-color-accent-high: oklch(61% 0.085 164);
+  --sl-hue-accent: 164;
+  --sl-color-accent-low: oklch(19% 0.02 var(--sl-hue-accent));
+  --sl-color-accent: oklch(50% 0.085 var(--sl-hue-accent));
+  --sl-color-accent-high: oklch(61% 0.085 var(--sl-hue-accent));
 
-  /* // TODO(HiDeoo) others */
+  --sl-badge-tip-text: var(--sl-color-purple-high);
+  --sl-badge-caution-text: var(--sl-color-orange-high);
+  --sl-badge-note-text: var(--sl-color-blue-high);
+  --sl-badge-success-text: var(--sl-color-green-high);
+
   --sl-color-bg-nav: var(--sl-color-black);
   --sl-color-bg-sidebar: var(--sl-color-black);
-
-  --sl-color-backdrop-overlay: oklch(24% 0.002 17 / 0.7);
+  --sl-color-backdrop-overlay: oklch(24% 0.002 var(--sl-hue-base) / 0.7);
 
   --sl-text-h1: var(--sl-text-3xl);
   --sl-text-h2: var(--sl-text-2xl);
@@ -60,27 +72,82 @@
   --sl-text-h6: unset;
 
   --sl-rapide-ui-bg-color: oklch(18% 0 0);
-  /**
-   * As of 06/12/2024, Firefox does not support relative Oklch colors.
-   *
-   * background-color: oklch(from var(--sl-color-black) l c h / 0.6);
-   */
-  --sl-rapide-ui-header-bg-color: oklch(18% 0.002 17 / 0.8);
-  /**
-   * As of 06/12/2024, Firefox does not support relative Oklch colors.
-   *
-   * --sl-rapide-ui-border-color: oklch(from var(--sl-color-gray-6) calc(l + 0.05) c h);
-   */
-  --sl-rapide-ui-border-color: oklch(28% 0.004 17);
+  --sl-rapide-ui-header-bg-color: oklch(18% 0.002 var(--sl-hue-base) / 0.8);
+  --sl-rapide-ui-border-color: oklch(28% 0.004 var(--sl-hue-base));
 
-  --sl-rapide-ec-marker-bg-color: oklch(27% 0.002 17);
-  --sl-rapide-ec-marker-border-color: oklch(47% 0.002 17);
+  --sl-rapide-ec-marker-bg-color: oklch(27% 0.002 var(--sl-hue-base));
+  --sl-rapide-ec-marker-border-color: oklch(47% 0.002 var(--sl-hue-base));
 }
 
 :root[data-theme='light'],
 [data-theme='light'] ::backdrop {
-  /* // TODO(HiDeoo)  */
-  --sl-color-black: green;
+  --sl-hue-base: 17;
+  --sl-color-white: oklch(30% 0.015 var(--sl-hue-base));
+  --sl-color-gray-1: oklch(36% 0.018 var(--sl-hue-base));
+  --sl-color-gray-2: oklch(36% 0.018 var(--sl-hue-base));
+  --sl-color-gray-3: oklch(44% 0.013 var(--sl-hue-base));
+  --sl-color-gray-4: oklch(66% 0.013 var(--sl-hue-base));
+  --sl-color-gray-5: oklch(88% 0.009 var(--sl-hue-base));
+  --sl-color-gray-6: oklch(90% 0.004 var(--sl-hue-base));
+  --sl-color-gray-7: oklch(96% 0.003 var(--sl-hue-base));
+  --sl-color-black: oklch(98% 0.002 var(--sl-hue-base));
+
+  --sl-color-orange-low: oklch(96% 0.02 var(--sl-hue-orange));
+  --sl-color-orange: oklch(74% 0.15 var(--sl-hue-orange));
+  --sl-color-orange-high: oklch(44% 0.09 var(--sl-hue-orange));
+  --sl-color-orange-accent: oklch(42% 0.08 var(--sl-hue-orange));
+  --sl-color-orange-accent-invert: oklch(52% 0.15 var(--sl-hue-orange));
+  --sl-color-orange-alt: oklch(95% 0.03 var(--sl-hue-orange));
+  --sl-color-orange-alt-invert: oklch(78% 0.06 var(--sl-hue-orange));
+  --sl-color-green-low: oklch(96% 0.01 var(--sl-hue-green));
+  --sl-color-green: oklch(66% 0.14 var(--sl-hue-green));
+  --sl-color-green-high: oklch(43% 0.09 var(--sl-hue-green));
+  --sl-color-green-accent: oklch(36% 0.07 var(--sl-hue-green));
+  --sl-color-green-accent-invert: oklch(50% 0.1 var(--sl-hue-green));
+  --sl-color-blue-low: oklch(95% 0.02 var(--sl-hue-blue));
+  --sl-color-blue: oklch(66% 0.15 var(--sl-hue-blue));
+  --sl-color-blue-high: oklch(40% 0.102 var(--sl-hue-blue));
+  --sl-color-blue-accent: oklch(35% 0.1 var(--sl-hue-blue));
+  --sl-color-blue-accent-invert: oklch(52% 0.2 var(--sl-hue-blue));
+  --sl-color-blue-alt: oklch(93% 0.03 var(--sl-hue-blue));
+  --sl-color-blue-alt-invert: oklch(77% 0.05 var(--sl-hue-blue));
+  --sl-color-purple-low: oklch(95% 0.02 var(--sl-hue-purple));
+  --sl-color-purple: oklch(66% 0.15 var(--sl-hue-purple));
+  --sl-color-purple-high: oklch(40% 0.102 var(--sl-hue-purple));
+  --sl-color-purple-accent: oklch(35% 0.1 var(--sl-hue-purple));
+  --sl-color-purple-accent-invert: oklch(52% 0.2 var(--sl-hue-purple));
+  --sl-color-purple-alt: oklch(93% 0.03 var(--sl-hue-purple));
+  --sl-color-purple-alt-invert: oklch(77% 0.05 var(--sl-hue-purple));
+  --sl-color-red-low: oklch(95% 0.01 var(--sl-hue-red));
+  --sl-color-red: oklch(66% 0.15 var(--sl-hue-red));
+  --sl-color-red-high: oklch(42% 0.13 var(--sl-hue-red));
+  --sl-color-red-accent: oklch(38% 0.15 var(--sl-hue-red));
+  --sl-color-red-accent-invert: oklch(52% 0.2 var(--sl-hue-red));
+  --sl-color-red-alt: oklch(94% 0.02 var(--sl-hue-red));
+  --sl-color-red-alt-invert: oklch(78% 0.04 var(--sl-hue-red));
+
+  --sl-hue-accent: 160;
+  --sl-color-accent-low: oklch(96% 0.015 var(--sl-hue-accent));
+  --sl-color-accent: oklch(53% 0.1197 var(--sl-hue-accent));
+  --sl-color-accent-high: oklch(46% 0.104 var(--sl-hue-accent));
+
+  --sl-badge-tip-bg: var(--sl-color-purple-low);
+  --sl-badge-tip-text: var(--sl-color-purple-high);
+  --sl-badge-caution-bg: var(--sl-color-orange-low);
+  --sl-badge-caution-text: var(--sl-color-orange-high);
+  --sl-badge-note-bg: var(--sl-color-blue-low);
+  --sl-badge-note-text: var(--sl-color-blue-high);
+  --sl-badge-success-bg: var(--sl-color-green-low);
+  --sl-badge-success-text: var(--sl-color-green-high);
+
+  --sl-color-backdrop-overlay: oklch(84% 0.003 var(--sl-hue-base) / 0.7);
+
+  --sl-rapide-ui-bg-color: oklch(100% 0 0);
+  --sl-rapide-ui-header-bg-color: oklch(98% 0.002 var(--sl-hue-base) / 0.7);
+  --sl-rapide-ui-border-color: oklch(88% 0.004 var(--sl-hue-base));
+
+  --sl-rapide-ec-marker-bg-color: oklch(93% 0.002 var(--sl-hue-base));
+  --sl-rapide-ec-marker-border-color: oklch(62% 0.002 var(--sl-hue-base));
 }
 
 /* Header */
@@ -416,12 +483,7 @@ mobile-starlight-toc .dropdown a:is(:hover, :focus-visible) {
 }
 
 .sl-markdown-content tr:nth-child(2n):not(:where(.not-content *)) {
-  /**
-   * As of 06/12/2024, Firefox does not support relative Oklch colors.
-   *
-   * background-color: oklch(from var(--sl-color-black) calc(l + 0.025) c h);
-   */
-  background-color: oklch(20.5% 0.002 17);
+  background-color: var(--sl-color-gray-7);
 }
 
 .sl-markdown-content :is(th, td):not(:where(.not-content *)) {
@@ -510,32 +572,32 @@ starlight-tabs ul[role='tablist'] a[role='tab']:not([aria-selected='true']):hove
   --sl-rapide-asides-bg-color: var(--sl-color-blue-low);
   --sl-rapide-asides-link-color: var(--sl-color-blue-accent);
   --sl-rapide-asides-link-hover-color: var(--sl-color-blue-accent-invert);
-  --sl-rapide-asides-table-alt-color: oklch(21.5% 0.02 var(--sl-hue-blue));
-  --sl-rapide-asides-table-border-color: oklch(36% 0.034 var(--sl-hue-blue));
+  --sl-rapide-asides-table-alt-color: var(--sl-color-blue-alt);
+  --sl-rapide-asides-table-border-color: var(--sl-color-blue-alt-invert);
 }
 
 .starlight-aside.starlight-aside--tip {
   --sl-rapide-asides-bg-color: var(--sl-color-purple-low);
   --sl-rapide-asides-link-color: var(--sl-color-purple-accent);
   --sl-rapide-asides-link-hover-color: var(--sl-color-purple-accent-invert);
-  --sl-rapide-asides-table-alt-color: oklch(23.5% 0.012 var(--sl-hue-purple));
-  --sl-rapide-asides-table-border-color: oklch(36% 0.033 var(--sl-hue-purple));
+  --sl-rapide-asides-table-alt-color: var(--sl-color-purple-alt);
+  --sl-rapide-asides-table-border-color: var(--sl-color-purple-alt-invert);
 }
 
 .starlight-aside.starlight-aside--caution {
   --sl-rapide-asides-bg-color: var(--sl-color-orange-low);
   --sl-rapide-asides-link-color: var(--sl-color-orange-accent);
   --sl-rapide-asides-link-hover-color: var(--sl-color-orange-accent-invert);
-  --sl-rapide-asides-table-alt-color: oklch(25.5% 0.01 var(--sl-hue-orange));
-  --sl-rapide-asides-table-border-color: oklch(42% 0.042 var(--sl-hue-orange));
+  --sl-rapide-asides-table-alt-color: var(--sl-color-orange-alt);
+  --sl-rapide-asides-table-border-color: var(--sl-color-orange-alt-invert);
 }
 
 .starlight-aside.starlight-aside--danger {
   --sl-rapide-asides-bg-color: var(--sl-color-red-low);
   --sl-rapide-asides-link-color: var(--sl-color-red-accent);
   --sl-rapide-asides-link-hover-color: var(--sl-color-red-accent-invert);
-  --sl-rapide-asides-table-alt-color: oklch(21.5% 0.018 var(--sl-hue-red));
-  --sl-rapide-asides-table-border-color: oklch(37% 0.03 var(--sl-hue-red));
+  --sl-rapide-asides-table-alt-color: var(--sl-color-red-alt);
+  --sl-rapide-asides-table-border-color: var(--sl-color-red-alt-invert);
 }
 
 .starlight-aside {
@@ -553,33 +615,23 @@ starlight-tabs ul[role='tablist'] a[role='tab']:not([aria-selected='true']):hove
 }
 
 .starlight-aside tr:nth-child(2n) {
-  /**
-   * As of 06/12/2024, Firefox does not support relative Oklch colors.
-   *
-   * background-color: oklch(from var(--sl-rapide-asides-bg-color) calc(l + 0.015) c h);
-   */
   background-color: var(--sl-rapide-asides-table-alt-color);
 }
 
 .starlight-aside td {
-  /**
-   * As of 06/12/2024, Firefox does not support relative Oklch colors.
-   *
-   * border-color: oklch(from var(--sl-color-asides-text-accent) calc(l - 0.5) calc(c - 0.02) h);
-   */
   border-color: var(--sl-rapide-asides-table-border-color);
 }
 
 /* File Tree */
 
-starlight-file-tree {
+.sl-markdown-content starlight-file-tree {
   background-color: var(--sl-rapide-ui-bg-color);
   border: 1px solid var(--sl-rapide-ui-border-color);
   border-radius: 0.5rem;
 }
 
-starlight-file-tree .directory > details > summary:hover ~ ul {
-  border-color: var(--sl-color-gray-2);
+.sl-markdown-content starlight-file-tree .directory > details > summary:hover ~ ul {
+  border-color: var(--sl-color-accent-high);
 }
 
 /* Notices */
@@ -611,12 +663,7 @@ starlight-file-tree .directory > details > summary:hover ~ ul {
 }
 
 .hero .action.primary:is(:hover, :focus-visible) {
-  /**
-   * As of 06/12/2024, Firefox does not support relative Oklch colors.
-   *
-   * border-color: oklch(from var(--sl-color-green) calc(l - 0.1) c h);
-   */
-  border-color: oklch(51% 0.115 var(--sl-hue-green));
+  border-color: oklch(52% 0.11 var(--sl-hue-green));
   color: var(--sl-color-green-accent-invert);
 }
 
