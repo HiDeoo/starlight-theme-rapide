@@ -533,11 +533,11 @@ starlight-tabs ul[role='tablist'] a[role='tab']:not([aria-selected='true']):hove
 
 /* Cards */
 
-.card-grid.stagger {
+.sl-markdown-content .card-grid.stagger {
   --stagger-height: 2.5rem;
 }
 
-.card {
+.sl-markdown-content .card {
   border-radius: 0.5rem;
   padding: clamp(1rem, calc(0.125rem + 1.5vw), 2.5rem);
 }
@@ -636,12 +636,12 @@ starlight-tabs ul[role='tablist'] a[role='tab']:not([aria-selected='true']):hove
 
 /* Notices */
 
-.content-panel:first-of-type p.sl-flex {
+.content-panel:first-of-type p.sl-flex:not(:where(.sl-markdown-content *)) {
   border-radius: 0.5rem;
   padding: 1rem;
 }
 
-.content-panel:first-of-type p.sl-flex svg {
+.content-panel:first-of-type p.sl-flex:not(:where(.sl-markdown-content *)) svg {
   flex-shrink: 0;
 }
 
