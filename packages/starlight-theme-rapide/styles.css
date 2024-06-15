@@ -55,13 +55,6 @@
   --sl-color-accent: oklch(50% 0.085 var(--sl-hue-accent));
   --sl-color-accent-high: oklch(61% 0.085 var(--sl-hue-accent));
 
-  --sl-badge-default-text: var(--sl-color-green-high);
-  --sl-badge-tip-text: var(--sl-color-purple-high);
-  --sl-badge-caution-text: var(--sl-color-orange-high);
-  --sl-badge-note-text: var(--sl-color-blue-high);
-  --sl-badge-success-text: var(--sl-color-green-high);
-  --sl-badge-danger-text: var(--sl-color-red-high);
-
   --sl-color-bg-nav: var(--sl-color-black);
   --sl-color-bg-sidebar: var(--sl-color-black);
   --sl-color-backdrop-overlay: oklch(24% 0.002 var(--sl-hue-base) / 0.7);
@@ -132,19 +125,6 @@
   --sl-color-accent-low: oklch(96% 0.015 var(--sl-hue-accent));
   --sl-color-accent: oklch(53% 0.1197 var(--sl-hue-accent));
   --sl-color-accent-high: oklch(46% 0.104 var(--sl-hue-accent));
-
-  --sl-badge-default-bg: var(--sl-color-green-low);
-  --sl-badge-default-text: var(--sl-color-green-high);
-  --sl-badge-tip-bg: var(--sl-color-purple-low);
-  --sl-badge-tip-text: var(--sl-color-purple-high);
-  --sl-badge-caution-bg: var(--sl-color-orange-low);
-  --sl-badge-caution-text: var(--sl-color-orange-high);
-  --sl-badge-note-bg: var(--sl-color-blue-low);
-  --sl-badge-note-text: var(--sl-color-blue-high);
-  --sl-badge-success-bg: var(--sl-color-green-low);
-  --sl-badge-success-text: var(--sl-color-green-high);
-  --sl-badge-danger-bg: var(--sl-color-red-low);
-  --sl-badge-danger-text: var(--sl-color-red-high);
 
   --sl-color-backdrop-overlay: oklch(84% 0.003 var(--sl-hue-base) / 0.7);
 
@@ -720,4 +700,30 @@ starlight-tabs ul[role='tablist'] a[role='tab']:not([aria-selected='true']):hove
   position: absolute;
   top: calc(var(--bullet-size) + var(--bullet-margin));
   width: var(--guide-width);
+}
+
+/* Badges */
+
+.sl-badge {
+  --sl-badge-default-text: var(--sl-color-green-high);
+  --sl-badge-tip-text: var(--sl-color-purple-high);
+  --sl-badge-caution-text: var(--sl-color-orange-high);
+  --sl-badge-note-text: var(--sl-color-blue-high);
+  --sl-badge-success-text: var(--sl-color-green-high);
+  --sl-badge-danger-text: var(--sl-color-red-high);
+}
+
+[data-theme='light'] .sl-badge {
+  --sl-badge-default-bg: var(--sl-color-green-low);
+  --sl-badge-default-text: var(--sl-color-green-high);
+  --sl-badge-tip-bg: var(--sl-color-purple-low);
+  --sl-badge-tip-text: var(--sl-color-purple-high);
+  --sl-badge-caution-bg: var(--sl-color-orange-low);
+  --sl-badge-caution-text: var(--sl-color-orange-high);
+  --sl-badge-note-bg: var(--sl-color-blue-low);
+  --sl-badge-note-text: var(--sl-color-blue-high);
+  --sl-badge-success-bg: var(--sl-color-green-low);
+  --sl-badge-success-text: var(--sl-color-green-high);
+  --sl-badge-danger-bg: var(--sl-color-red-low);
+  --sl-badge-danger-text: var(--sl-color-red-high);
 }
