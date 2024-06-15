@@ -470,6 +470,10 @@ mobile-starlight-toc nav {
   }
 }
 
+mobile-starlight-toc nav details summary {
+  border-bottom: initial;
+}
+
 mobile-starlight-toc nav:has(details[open]) {
   -webkit-backdrop-filter: initial;
   backdrop-filter: initial;
