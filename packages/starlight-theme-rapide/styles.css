@@ -213,6 +213,19 @@ starlight-lang-select svg.label-icon {
   font-size: 1rem;
 }
 
+starlight-menu-button button {
+  box-shadow: initial;
+}
+
+[data-theme='light'] starlight-menu-button button {
+  background-color: var(--sl-color-white);
+  color: var(--sl-color-black);
+}
+
+[data-theme='light'] starlight-menu-button[aria-expanded='true'] button {
+  background-color: var(--sl-color-gray-3);
+}
+
 /* Search */
 
 @media (min-width: 50rem) {
