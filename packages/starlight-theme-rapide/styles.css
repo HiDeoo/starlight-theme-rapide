@@ -154,6 +154,7 @@ header.header {
 }
 
 @media (min-width: 50rem) {
+  header.header:not(:has(starlight-lang-select)),
   [data-has-sidebar] header.header:not(:has(starlight-lang-select)) {
     padding-inline-end: calc(var(--sl-nav-pad-x) - 1rem);
   }
