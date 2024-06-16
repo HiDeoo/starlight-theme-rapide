@@ -2,7 +2,7 @@
   "name": "starlight-theme-rapide-monorepo",
   "version": "0.0.1",
   "license": "MIT",
-  "description": "// TODO(HiDeoo)",
+  "description": "Starlight theme inspired by the Visual Studio Code Vitesse theme.",
   "author": "HiDeoo <github@hideoo.dev> (https://hideoo.dev)",
   "type": "module",
   "scripts": {
@@ -28,7 +28,13 @@
   "private": true,
   "sideEffects": false,
   "keywords": [
-    "// TODO(HiDeoo)"
+    "starlight",
+    "theme",
+    "rapide",
+    "vitesse",
+    "plugin",
+    "documentation",
+    "astro"
   ],
   "homepage": "https://github.com/HiDeoo/starlight-theme-rapide",
   "repository": {
