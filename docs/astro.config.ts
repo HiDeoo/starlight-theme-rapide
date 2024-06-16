@@ -27,7 +27,7 @@ export default defineConfig({
       social: {
         github: 'https://github.com/HiDeoo/starlight-theme-rapide',
       },
-      title: 'Starlight Theme Rapide',
+      title: 'Starlight Rapide',
     }),
   ],
   site: 'https://starlight-theme-rapide.vercel.app',
