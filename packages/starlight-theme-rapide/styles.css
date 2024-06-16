@@ -549,27 +549,27 @@ starlight-tabs ul[role='tablist'] a[role='tab']:not([aria-selected='true']):hove
   padding: clamp(1rem, calc(0.125rem + 1.5vw), 2.5rem);
 }
 
-.sl-link-card {
+.sl-markdown-content .sl-link-card {
   box-shadow: none;
 }
 
-.sl-link-card:hover {
+.sl-markdown-content .sl-link-card:hover {
   background: initial;
 }
 
-.sl-link-card .title {
+.sl-markdown-content .sl-link-card .title {
   color: var(--sl-color-white);
 }
 
-.sl-link-card .description {
+.sl-markdown-content .sl-link-card .description {
   color: var(--sl-color-gray-3);
 }
 
-.sl-link-card:is(:hover, :focus-visible) .description {
+.sl-markdown-content .sl-link-card:is(:hover, :focus-visible) .description {
   color: var(--sl-color-gray-2);
 }
 
-.sl-link-card .icon {
+.sl-markdown-content .sl-link-card .icon {
   color: var(--sl-color-gray-2);
 }
 
