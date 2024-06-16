@@ -1,0 +1,49 @@
+---
+title: Cards
+---
+
+import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components'
+
+## Single card
+
+<Card title="In consectetur diam">
+  Donec sollicitudin dolor et sollicitudin efficitur. Nullam semper posuere
+  lacinia.
+</Card>
+
+## Cards in a grid
+
+<CardGrid>
+  <Card title="Lorem" icon="star">
+    Fusce ornare ante est.
+  </Card>
+  <Card title="Ipsum" icon="moon">
+    Suspendisse ac tincidunt.
+  </Card>
+</CardGrid>
+
+## Staggered cards in a grid
+
+<CardGrid stagger>
+  <Card title="Lorem" icon="star">
+    Fusce ornare ante est.
+  </Card>
+  <Card title="Ipsum" icon="moon">
+    Suspendisse ac tincidunt.
+  </Card>
+</CardGrid>
+
+## Single link card
+
+<LinkCard
+  title="In consectetur diam"
+  description="Donec sollicitudin dolor et sollicitudin efficitur"
+  href="#_"
+/>
+
+## Link cards in a grid
+
+<CardGrid>
+  <LinkCard title="Fusce ornare ante est" href="#_" />
+  <LinkCard title="Suspendisse ac tincidunt" href="#_" />
+</CardGrid>

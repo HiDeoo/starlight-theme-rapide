@@ -1,0 +1,25 @@
+---
+import Default from '@astrojs/starlight/components/LanguageSelect.astro'
+import type { Props } from '@astrojs/starlight/props'
+import config from 'virtual:starlight/user-config'
+
+let localeLength = 0
+
+if (config.isMultilingual) {
+  for (const locale of Object.values(config.locales)) {
+    if (locale && locale.lang === Astro.currentLocale) {
+      localeLength = locale.label.length
+    }
+  }
+}
+---
+
+{
+  config.isMultilingual && (
+    <div style={`--sl-rapide-lang-select-width: ${localeLength}ch;`}>
+      <Default {...Astro.props}>
+        <slot />
+      </Default>
+    </div>
+  )
+}

@@ -1,0 +1,9 @@
+---
+import Default from '@astrojs/starlight/components/PageTitle.astro'
+import type { Props } from '@astrojs/starlight/props'
+
+import Banner from '../components/Banner.astro'
+---
+
+<Banner {...Astro.props} />
+<Default {...Astro.props}><slot /></Default>

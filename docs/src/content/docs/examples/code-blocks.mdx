@@ -1,0 +1,51 @@
+---
+title: Code Blocks
+---
+
+## Markdown code block
+
+```js
+const foo = 'bar'
+```
+
+## `<Code>` component
+
+import { Code } from '@astrojs/starlight/components'
+
+<Code code="const foo = 'bar'" lang="js" />
+
+## Text markers
+
+```js {2}
+function test() {
+  const foo = 'bar'
+}
+```
+
+```js "function" ins="foo" del="bar"
+function test() {
+  const foo = 'bar'
+}
+```
+
+## Diff
+
+```diff lang="js"
+  function test() {
+-   const foo = 'bar'
++   const foo = 'baz'
+  }
+```
+
+## File name
+
+```js
+// test.js
+const foo = 'bar'
+```
+
+## Terminal window
+
+```bash title="Doing something…"
+pnpm run thing
+```

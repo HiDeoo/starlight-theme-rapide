@@ -1,0 +1,28 @@
+---
+import type { Props } from '@astrojs/starlight/props'
+
+const { banner } = Astro.props.entry['data']
+---
+
+{banner && <div class="sl-rapide-banner" set:html={banner.content} />}
+
+<style>
+  .sl-rapide-banner {
+    background-color: var(--sl-color-green-low);
+    border: 1px solid var(--sl-color-green);
+    border-radius: 0.5rem;
+    color: var(--sl-color-green-high);
+    line-height: 1.4;
+    margin-block: 1rem 1rem;
+    padding: 1rem;
+  }
+
+  .sl-rapide-banner :global(a) {
+    color: var(--sl-color-green-accent);
+    text-underline-offset: 0.25em;
+  }
+
+  .sl-rapide-banner :global(a:is(:hover, :focus-visible)) {
+    color: var(--sl-color-green-accent-invert);
+  }
+</style>
