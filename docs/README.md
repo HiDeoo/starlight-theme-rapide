@@ -1,11 +1,6 @@
 <div align="center">
   <h1>starlight-theme-rapide ⚡</h1>
   <p>Starlight theme inspired by the Visual Studio Code Vitesse theme.</p>
-  <p>
-    <a href="https://i.imgur.com/FmJRxub.png" title="Screenshot of the Starlight Rapide theme in dark and light mode">
-      <img alt="Screenshot of the Starlight Rapide theme in dark and light mode" src="https://i.imgur.com/FmJRxub.png" width="520" />
-    </a>
-  </p>
 </div>
 
 <div align="center">
@@ -18,9 +13,13 @@
   <br />
 </div>
 
-## Getting Started
+## Documentation
 
-Want to get started immediately? Check out the [getting started guide](https://starlight-theme-rapide.vercel.app/getting-started/) or check out the various [examples](https://starlight-theme-rapide.vercel.app/examples/asides/) to see the theme in action.
+Run the docs locally using [pnpm](https://pnpm.io):
+
+```shell
+pnpm run dev
+```
 
 ## License
 
