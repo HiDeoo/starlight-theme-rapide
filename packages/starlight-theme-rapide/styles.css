@@ -64,7 +64,6 @@
   --sl-text-h3: var(--sl-text-xl);
   --sl-text-h4: var(--sl-text-lg);
   --sl-text-h5: unset;
-  --sl-text-h6: unset;
 
   --sl-rapide-ui-bg-color: oklch(18% 0 0);
   --sl-rapide-ui-header-bg-color: oklch(18% 0.002 var(--sl-hue-base) / 0.8);
@@ -546,6 +545,12 @@ starlight-tabs ul[role='tablist'] a[role='tab']:not([aria-selected='true']):hove
 }
 
 .sl-markdown-content .card {
+  --sl-text-h1: var(--sl-text-4xl);
+  --sl-text-h2: var(--sl-text-3xl);
+  --sl-text-h3: var(--sl-text-2xl);
+  --sl-text-h4: var(--sl-text-xl);
+  --sl-text-h5: var(--sl-text-lg);
+
   border-radius: 0.5rem;
   padding: clamp(1rem, calc(0.125rem + 1.5vw), 2.5rem);
 }
