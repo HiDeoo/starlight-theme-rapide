@@ -555,6 +555,10 @@ starlight-tabs ul[role='tablist'] a[role='tab']:not([aria-selected='true']):hove
   padding: clamp(1rem, calc(0.125rem + 1.5vw), 2.5rem);
 }
 
+.sl-markdown-content .card .title .icon {
+  font-size: 1.875rem;
+}
+
 .sl-markdown-content .sl-link-card {
   box-shadow: none;
 }
