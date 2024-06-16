@@ -1,5 +1,0 @@
----
-title: Configuration
----
-
-Hello, world!
