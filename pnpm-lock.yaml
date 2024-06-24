@@ -61,7 +61,7 @@ importers:
     dependencies:
       '@astrojs/starlight':
         specifier: '>=0.23.0'
-        version: 0.24.0(astro@4.10.1(@types/node@17.0.45)(typescript@5.4.5))
+        version: 0.24.4(astro@4.10.1(@types/node@17.0.45)(typescript@5.4.5))
 
 packages:
 
@@ -106,11 +106,6 @@ packages:
 
   '@astrojs/sitemap@3.1.5':
     resolution: {integrity: sha512-GLdzJ01387Uzb8RKYpsYLlg/GzoPnGbmDeQNkarSE11i2+l9Qp8Nj/WoTEy9nkTS25fxxy0kxDfJmreeVleCqg==}
-
-  '@astrojs/starlight@0.24.0':
-    resolution: {integrity: sha512-YUBf7TgDUMRcyoZ8S8hlnPuEvgqFuB5F7tQUwPK5GwkTC1E+gMW8zx9J/RgJAXNjQSi19s73nuF19zw/QSy5tw==}
-    peerDependencies:
-      astro: ^4.8.6
 
   '@astrojs/starlight@0.24.4':
     resolution: {integrity: sha512-rED8LPQwsXlgclfdHO+okUGcirof1prrxZLuKWp380xC/T7u2qQ5b1gnKqpM+92x+vhs8GYT7mHGKz9VctwdUg==}
@@ -565,6 +560,7 @@ packages:
   '@humanwhocodes/config-array@0.11.14':
     resolution: {integrity: sha512-3T8LkOmg45BV5FICb15QQMsyUSWrQ8AygVfC7ZG32zOalnqrilm018ZVCw0eapXux8FtA33q8PSRSstjee3jSg==}
     engines: {node: '>=10.10.0'}
+    deprecated: Use @eslint/config-array instead
 
   '@humanwhocodes/module-importer@1.0.1':
     resolution: {integrity: sha512-bxveV4V8v5Yb4ncFTT3rPSgZBOpCkjfK0y4oVVVJwIuDVBRMDXrPyXRL988i5ap9m9bnyEEjWfm5WkBmtffLfA==}
@@ -572,6 +568,7 @@ packages:
 
   '@humanwhocodes/object-schema@2.0.3':
     resolution: {integrity: sha512-93zYdMES/c1D69yZiKDBj0V24vqNzB/koF26KPaagAfd3P/4gUlh3Dys5ogAK+Exi9QyzlD8x/08Zt7wIKcDcA==}
+    deprecated: Use @eslint/object-schema instead
 
   '@img/sharp-darwin-arm64@0.33.4':
     resolution: {integrity: sha512-p0suNqXufJs9t3RqLBO6vvrgr5OhgbWp76s5gTRvdmxmuv9E1rcaqGUsl3l4mKVmXPkTkTErXediAui4x+8PSA==}
@@ -3498,32 +3495,6 @@ snapshots:
       sitemap: 7.1.2
       stream-replace-string: 2.0.0
       zod: 3.23.8
-
-  '@astrojs/starlight@0.24.0(astro@4.10.1(@types/node@17.0.45)(typescript@5.4.5))':
-    dependencies:
-      '@astrojs/mdx': 3.1.0(astro@4.10.1(@types/node@17.0.45)(typescript@5.4.5))
-      '@astrojs/sitemap': 3.1.5
-      '@pagefind/default-ui': 1.1.0
-      '@types/hast': 3.0.4
-      '@types/mdast': 4.0.4
-      astro: 4.10.1(@types/node@17.0.45)(typescript@5.4.5)
-      astro-expressive-code: 0.35.3(astro@4.10.1(@types/node@17.0.45)(typescript@5.4.5))
-      bcp-47: 2.1.0
-      hast-util-from-html: 2.0.1
-      hast-util-select: 6.0.2
-      hast-util-to-string: 3.0.0
-      hastscript: 8.0.0
-      mdast-util-directive: 3.0.0
-      mdast-util-to-markdown: 2.1.0
-      pagefind: 1.1.0
-      rehype: 13.0.1
-      rehype-format: 5.0.0
-      remark-directive: 3.0.0
-      unified: 11.0.4
-      unist-util-visit: 5.0.0
-      vfile: 6.0.1
-    transitivePeerDependencies:
-      - supports-color
 
   '@astrojs/starlight@0.24.4(astro@4.10.1(@types/node@17.0.45)(typescript@5.4.5))':
     dependencies:
