@@ -17,6 +17,10 @@ export default defineConfig({
           items: [{ label: 'Getting Started', link: '/getting-started/' }],
         },
         {
+          label: 'Resources',
+          items: [{ label: 'Plugins and Tools', link: '/resources/starlight/' }],
+        },
+        {
           label: 'Examples',
           autogenerate: { directory: 'examples' },
         },
