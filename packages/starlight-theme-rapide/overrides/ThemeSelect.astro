@@ -3,7 +3,6 @@ import crypto from 'node:crypto'
 
 import type { Props } from '@astrojs/starlight/props'
 
-const { labels } = Astro.props
 const id = `moon-mask-${crypto.randomBytes(4).toString('hex')}`
 
 // https://web.dev/building-a-theme-switch-component/
@@ -12,10 +11,10 @@ const id = `moon-mask-${crypto.randomBytes(4).toString('hex')}`
 
 <starlight-rapide-theme-select>
   <button
-    aria-label={labels['themeSelect.accessibleLabel']}
+    aria-label={Astro.locals.t('themeSelect.accessibleLabel')}
     aria-live="polite"
     class="sl-flex"
-    title={labels['themeSelect.accessibleLabel']}
+    title={Astro.locals.t('themeSelect.accessibleLabel')}
   >
     <svg aria-hidden="true" height="16" viewBox="0 0 24 24" width="16">
       <mask class="moon" id={id}>
