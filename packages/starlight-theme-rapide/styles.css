@@ -704,39 +704,39 @@ starlight-tabs ul[role='tablist'] a[role='tab']:not([aria-selected='true']):hove
 
 /* Link Buttons */
 
-.sl-link-button {
+:is(.hero, .sl-markdown-content) .sl-link-button {
   padding: 0.75rem 1rem;
 }
 
-.sl-link-button svg {
+:is(.hero, .sl-markdown-content) .sl-link-button svg {
   font-size: 1.25rem;
 }
 
-.sl-link-button.primary {
+:is(.hero, .sl-markdown-content) .sl-link-button.primary {
   background-color: var(--sl-color-green-low);
   border: 1px solid var(--sl-color-green);
   color: var(--sl-color-green-high);
 }
 
-.sl-link-button.primary:is(:hover, :focus-visible) {
+:is(.hero, .sl-markdown-content) .sl-link-button.primary:is(:hover, :focus-visible) {
   border-color: oklch(52% 0.11 var(--sl-hue-green));
   color: var(--sl-color-green-accent-invert);
 }
 
-.sl-link-button.secondary {
+:is(.hero, .sl-markdown-content) .sl-link-button.secondary {
   border-color: var(--sl-color-gray-2);
   color: var(--sl-color-gray-2);
 }
 
-.sl-link-button.secondary:is(:hover, :focus-visible) {
+:is(.hero, .sl-markdown-content) .sl-link-button.secondary:is(:hover, :focus-visible) {
   border-color: var(--sl-color-accent-high);
   color: var(--sl-color-accent-high);
 }
 
-.sl-link-button.minimal {
+:is(.hero, .sl-markdown-content) .sl-link-button.minimal {
   padding-inline: 0.25rem;
 }
 
-.sl-link-button.minimal:is(:hover, :focus-visible) {
+:is(.hero, .sl-markdown-content) .sl-link-button.minimal:is(:hover, :focus-visible) {
   color: var(--sl-color-accent-high);
 }
