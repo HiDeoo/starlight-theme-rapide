@@ -20,7 +20,7 @@
     "lint": "prettier -c --cache . && eslint . --cache --max-warnings=0"
   },
   "peerDependencies": {
-    "@astrojs/starlight": ">=0.28.2"
+    "@astrojs/starlight": ">=0.28.0"
   },
   "engines": {
     "node": ">=18"

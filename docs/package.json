@@ -15,7 +15,7 @@
     "@astrojs/starlight": "^0.28.2",
     "@hideoo/starlight-plugins-docs-components": "^0.2.2",
     "astro": "^4.15.8",
-    "sharp": "^0.33.5",
+    "sharp": "^0.33.4",
     "starlight-theme-rapide": "workspace:*"
   },
   "engines": {
