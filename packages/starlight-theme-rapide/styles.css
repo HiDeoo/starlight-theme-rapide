@@ -662,46 +662,6 @@ starlight-tabs ul[role='tablist'] a[role='tab']:not([aria-selected='true']):hove
   flex-shrink: 0;
 }
 
-/* Hero */
-
-.hero .action {
-  border: 1px solid transparent;
-  padding: 0.75rem 1rem;
-}
-
-.hero .action svg {
-  font-size: 1.25rem;
-}
-
-.hero .action.primary {
-  background-color: var(--sl-color-green-low);
-  border: 1px solid var(--sl-color-green);
-  color: var(--sl-color-green-high);
-}
-
-.hero .action.primary:is(:hover, :focus-visible) {
-  border-color: oklch(52% 0.11 var(--sl-hue-green));
-  color: var(--sl-color-green-accent-invert);
-}
-
-.hero .action.secondary {
-  border-color: var(--sl-color-gray-2);
-  color: var(--sl-color-gray-2);
-}
-
-.hero .action.secondary:is(:hover, :focus-visible) {
-  border-color: var(--sl-color-accent-high);
-  color: var(--sl-color-accent-high);
-}
-
-.hero .action.minimal:is(:hover, :focus-visible) {
-  color: var(--sl-color-accent-high);
-}
-
-.hero .action.minimal {
-  padding-inline: 0.25rem;
-}
-
 /* Steps */
 
 .sl-steps > li:last-of-type::after {
@@ -740,4 +700,43 @@ starlight-tabs ul[role='tablist'] a[role='tab']:not([aria-selected='true']):hove
   --sl-badge-success-text: var(--sl-color-green-high);
   --sl-badge-danger-bg: var(--sl-color-red-low);
   --sl-badge-danger-text: var(--sl-color-red-high);
+}
+
+/* Link Buttons */
+
+:is(.hero, .sl-markdown-content) .sl-link-button {
+  padding: 0.75rem 1rem;
+}
+
+:is(.hero, .sl-markdown-content) .sl-link-button svg {
+  font-size: 1.25rem;
+}
+
+:is(.hero, .sl-markdown-content) .sl-link-button.primary {
+  background-color: var(--sl-color-green-low);
+  border: 1px solid var(--sl-color-green);
+  color: var(--sl-color-green-high);
+}
+
+:is(.hero, .sl-markdown-content) .sl-link-button.primary:is(:hover, :focus-visible) {
+  border-color: oklch(52% 0.11 var(--sl-hue-green));
+  color: var(--sl-color-green-accent-invert);
+}
+
+:is(.hero, .sl-markdown-content) .sl-link-button.secondary {
+  border-color: var(--sl-color-gray-2);
+  color: var(--sl-color-gray-2);
+}
+
+:is(.hero, .sl-markdown-content) .sl-link-button.secondary:is(:hover, :focus-visible) {
+  border-color: var(--sl-color-accent-high);
+  color: var(--sl-color-accent-high);
+}
+
+:is(.hero, .sl-markdown-content) .sl-link-button.minimal {
+  padding-inline: 0.25rem;
+}
+
+:is(.hero, .sl-markdown-content) .sl-link-button.minimal:is(:hover, :focus-visible) {
+  color: var(--sl-color-accent-high);
 }
