@@ -1,0 +1,31 @@
+---
+title: Link Buttons
+---
+
+import { LinkButton } from '@astrojs/starlight/components'
+
+## No icons
+
+<LinkButton href="/getting-started/">Get started</LinkButton>
+<LinkButton href="https://starlight.astro.build/" variant="secondary">
+  Related: Starlight
+</LinkButton>
+<LinkButton href="https://docs.astro.build/" variant="minimal">
+  Related: Astro
+</LinkButton>
+
+## With icons
+
+<LinkButton href="/getting-started/" icon="rocket">
+  Get started
+</LinkButton>
+<LinkButton
+  href="https://starlight.astro.build/"
+  variant="secondary"
+  icon="external"
+>
+  Related: Starlight
+</LinkButton>
+<LinkButton href="https://docs.astro.build/" variant="minimal" icon="external">
+  Related: Astro
+</LinkButton>
