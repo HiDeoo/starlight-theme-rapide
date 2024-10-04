@@ -27,7 +27,6 @@ export default function starlightThemeRapidePlugin(): StarlightPlugin {
             config.expressiveCode === false
               ? false
               : {
-                  ...(typeof config.expressiveCode === 'object' ? config.expressiveCode : {}),
                   styleOverrides: {
                     borderColor: 'var(--sl-rapide-ui-border-color)',
                     borderRadius: '0.5rem',
@@ -44,6 +43,7 @@ export default function starlightThemeRapidePlugin(): StarlightPlugin {
                     },
                   },
                   themes: ['vitesse-dark', 'vitesse-light'],
+                  ...(typeof config.expressiveCode === 'object' ? config.expressiveCode : {}),
                 },
         })
       },
