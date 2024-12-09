@@ -26,6 +26,7 @@ export default defineConfig({
         },
       ],
       social: {
+        blueSky: 'https://bsky.app/profile/hideoo.dev',
         github: 'https://github.com/HiDeoo/starlight-theme-rapide',
       },
       title: 'Starlight Rapide',
