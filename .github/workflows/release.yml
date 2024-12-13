@@ -8,7 +8,7 @@ on:
 jobs:
   changeset:
     name: Changeset
-    iif: ${{ github.repository_owner == 'hideoo' }}
+    if: ${{ github.repository_owner == 'hideoo' }}
     runs-on: ubuntu-latest
     permissions:
       contents: write
