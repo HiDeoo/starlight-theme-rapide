@@ -17,11 +17,10 @@
     "./package.json": "./package.json"
   },
   "scripts": {
-    "lint": "eslint . --cache --max-warnings=0",
-    "format": "prettier -w --cache --ignore-unknown ."
+    "lint": "eslint . --cache --max-warnings=0"
   },
   "peerDependencies": {
-    "@astrojs/starlight": ">=0.28.0"
+    "@astrojs/starlight": ">=0.30.0"
   },
   "engines": {
     "node": ">=18"
