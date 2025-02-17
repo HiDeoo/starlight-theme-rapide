@@ -6,7 +6,7 @@ export default function starlightThemeRapidePlugin(): StarlightPlugin {
   return {
     name: 'starlight-theme-rapide-plugin',
     hooks: {
-      setup({ config, logger, updateConfig }) {
+      'config:setup'({ config, logger, updateConfig }) {
         updateConfig({
           components: overrideComponents(
             config,
