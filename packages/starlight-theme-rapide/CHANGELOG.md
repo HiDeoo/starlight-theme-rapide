@@ -1,5 +1,17 @@
 # starlight-theme-rapide
 
+## 0.4.0
+
+### Minor Changes
+
+- [#18](https://github.com/HiDeoo/starlight-theme-rapide/pull/18) [`6acf10f`](https://github.com/HiDeoo/starlight-theme-rapide/commit/6acf10f9658c1d28ba9153a958a2f672436fd8ea) Thanks [@HiDeoo](https://github.com/HiDeoo)! - ⚠️ **BREAKING CHANGE:** The minimum supported version of Starlight is now version `0.32.0`.
+
+  Please use the `@astrojs/upgrade` command to upgrade your project:
+
+  ```sh
+  npx @astrojs/upgrade
+  ```
+
 ## 0.3.0
 
 ### Minor Changes
