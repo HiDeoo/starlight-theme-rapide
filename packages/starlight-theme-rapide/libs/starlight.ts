@@ -1,4 +1,4 @@
-import type { StarlightPlugin } from '@astrojs/starlight/types'
+import type { HookParameters } from '@astrojs/starlight/types'
 import type { AstroIntegrationLogger } from 'astro'
 
 export function overrideComponents(
@@ -25,7 +25,7 @@ export function overrideComponents(
   return components
 }
 
-type StarlightUserConfig = Parameters<StarlightPlugin['hooks']['setup']>['0']['config']
+type StarlightUserConfig = HookParameters<'config:setup'>['config']
 
 type ComponentOverride =
   | keyof NonNullable<StarlightUserConfig['components']>

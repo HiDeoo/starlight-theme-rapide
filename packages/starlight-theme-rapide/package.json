@@ -20,7 +20,7 @@
     "lint": "eslint . --cache --max-warnings=0"
   },
   "peerDependencies": {
-    "@astrojs/starlight": ">=0.30.0"
+    "@astrojs/starlight": ">=0.32.0"
   },
   "engines": {
     "node": ">=18"

@@ -1,8 +1,7 @@
 ---
 import { Icon } from '@astrojs/starlight/components'
-import type { Props } from '@astrojs/starlight/props'
 
-const { dir, pagination } = Astro.props
+const { dir, pagination } = Astro.locals.starlightRoute
 const { prev, next } = pagination
 const isRtl = dir === 'rtl'
 ---
