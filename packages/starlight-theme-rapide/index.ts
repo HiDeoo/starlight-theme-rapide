@@ -12,11 +12,6 @@ export default function starlightThemeRapidePlugin(): StarlightPlugin {
             config,
             [
               'Pagination',
-              'Banner',
-              {
-                name: 'PageTitle',
-                fallback: 'Banner',
-              },
               'ThemeSelect',
               'LanguageSelect',
             ],

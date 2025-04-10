@@ -474,6 +474,40 @@ mobile-starlight-toc .dropdown a:is(:hover, :focus-visible) {
   color: var(--sl-color-accent-high);
 }
 
+/* Banner */
+
+.sl-banner {
+  background-color: var(--sl-color-green-low);
+  border: 1px solid var(--sl-color-green);
+  border-radius: 0.5rem;
+  color: var(--sl-color-green-high);
+  line-height: 1.4;
+  margin: 2rem var(--sl-content-pad-x) 1rem;
+  padding: 1rem;
+  text-align: start;
+  text-wrap: wrap;
+}
+
+@media (min-width: 1416px) {
+  html[data-has-sidebar] .sl-banner {
+    width: var(--sl-content-width);
+    float: right;
+  }
+}
+
+html:not([data-has-sidebar]) .sl-banner {
+  margin-inline: var(--sl-nav-pad-x);
+}
+
+.sl-banner a {
+  color: var(--sl-color-green-accent);
+  text-underline-offset: 0.25em;
+}
+
+.sl-banner a:is(:hover, :focus-visible) {
+  color: var(--sl-color-green-accent-invert);
+}
+
 /* Markdown */
 
 .sl-markdown-content a:not(:where(.not-content *)) {
