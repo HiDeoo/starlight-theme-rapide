@@ -13,7 +13,9 @@
     "./overrides/PageTitle.astro": "./overrides/PageTitle.astro",
     "./overrides/Pagination.astro": "./overrides/Pagination.astro",
     "./overrides/ThemeSelect.astro": "./overrides/ThemeSelect.astro",
-    "./styles": "./styles.css",
+    "./styles/base": "./styles/base.css",
+    "./styles/layers": "./styles/layers.css",
+    "./styles/theme": "./styles/theme.css",
     "./package.json": "./package.json"
   },
   "scripts": {

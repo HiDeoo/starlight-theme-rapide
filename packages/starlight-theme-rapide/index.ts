@@ -8,21 +8,28 @@ export default function starlightThemeRapidePlugin(): StarlightPlugin {
     hooks: {
       'config:setup'({ config, logger, updateConfig }) {
         updateConfig({
+          // TODO(HiDeoo)
           components: overrideComponents(
             config,
             [
-              'Pagination',
-              'Banner',
-              {
-                name: 'PageTitle',
-                fallback: 'Banner',
-              },
-              'ThemeSelect',
+              // 'Banner',
+              // {
+              //   name: 'PageTitle',
+              //   fallback: 'Banner',
+              // },
               'LanguageSelect',
+              'Pagination',
+              'ThemeSelect',
             ],
             logger,
           ),
-          customCss: [...(config.customCss ?? []), 'starlight-theme-rapide/styles'],
+          customCss: [
+            ...(config.customCss ?? []),
+            'starlight-theme-rapide/styles/layers',
+            'starlight-theme-rapide/styles/theme',
+            'starlight-theme-rapide/styles/base',
+          ],
+          // TODO(HiDeoo)
           expressiveCode:
             config.expressiveCode === false
               ? false
