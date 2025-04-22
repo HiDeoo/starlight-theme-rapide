@@ -17,6 +17,7 @@ export default function starlightThemeRapidePlugin(): StarlightPlugin {
             'starlight-theme-rapide/styles/layers',
             'starlight-theme-rapide/styles/theme',
             'starlight-theme-rapide/styles/base',
+            ...(config.markdown?.headingLinks === false ? [] : ['starlight-theme-rapide/styles/anchors']),
           ],
           expressiveCode:
             config.expressiveCode === false

@@ -1,0 +1,16 @@
+@layer rapide {
+  /**
+   * Heading anchor links
+   */
+  .sl-markdown-content .sl-anchor-link {
+    color: var(--sl-color-accent-high);
+
+    &:is(:hover, :focus-visible) {
+      color: var(--sl-color-white);
+    }
+
+    .sl-anchor-icon svg {
+      transform: translate(0.25rem, 0.25rem) rotate(45deg) scale(1.35);
+    }
+  }
+}
