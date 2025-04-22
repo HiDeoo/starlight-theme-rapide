@@ -6,7 +6,6 @@ export default defineConfig({
   integrations: [
     starlight({
       credits: true,
-      customCss: ['./src/styles/custom.css'],
       editLink: {
         baseUrl: 'https://github.com/HiDeoo/starlight-theme-rapide/edit/main/docs/',
       },
