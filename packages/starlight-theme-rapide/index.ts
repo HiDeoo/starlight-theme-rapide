@@ -4,25 +4,11 @@ import { overrideComponents } from './libs/starlight'
 
 export default function starlightThemeRapidePlugin(): StarlightPlugin {
   return {
-    name: 'starlight-theme-rapide-plugin',
+    name: 'starlight-theme-rapide',
     hooks: {
       'config:setup'({ config, logger, updateConfig }) {
         updateConfig({
-          // TODO(HiDeoo)
-          components: overrideComponents(
-            config,
-            [
-              // 'Banner',
-              // {
-              //   name: 'PageTitle',
-              //   fallback: 'Banner',
-              // },
-              'LanguageSelect',
-              'Pagination',
-              'ThemeSelect',
-            ],
-            logger,
-          ),
+          components: overrideComponents(config, ['LanguageSelect', 'Pagination', 'ThemeSelect'], logger),
           customCss: [
             ...(config.customCss ?? []),
             'starlight-theme-rapide/styles/layers',

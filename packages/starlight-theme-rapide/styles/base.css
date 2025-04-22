@@ -59,7 +59,7 @@
 
   starlight-menu-button {
     button {
-      box-shadow: initial;
+      box-shadow: none;
 
       [data-theme='light'] & {
         background-color: var(--sl-color-white);
@@ -615,6 +615,43 @@
 
       &:is(:hover, :focus-visible) {
         color: var(--sl-color-accent-high);
+      }
+    }
+  }
+
+  /**
+   * Banner
+   */
+  .sl-banner {
+    background-color: var(--sl-color-green-low);
+    border: 1px solid var(--sl-color-green);
+    border-radius: 0.5rem;
+    box-shadow: none;
+    color: var(--sl-color-green-high);
+    line-height: 1.4;
+    margin-block: 2rem -0.5rem;
+    margin-inline: var(--sl-content-pad-x);
+    max-width: var(--sl-content-width);
+    padding: 1rem;
+    text-align: start;
+    text-wrap: initial;
+
+    a {
+      color: var(--sl-color-green-accent);
+      text-underline-offset: 0.25em;
+
+      &:is(:hover, :focus-visible) {
+        color: var(--sl-color-green-accent-invert);
+      }
+    }
+
+    @media (min-width: 72rem) {
+      margin-bottom: -1rem;
+      margin-inline: auto;
+
+      [data-has-sidebar] & {
+        justify-self: end;
+        margin-inline: var(--sl-content-pad-x);
       }
     }
   }

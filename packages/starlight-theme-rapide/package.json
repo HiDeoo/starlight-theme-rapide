@@ -7,10 +7,7 @@
   "type": "module",
   "exports": {
     ".": "./index.ts",
-    "./components/Banner.astro": "./components/Banner.astro",
-    "./overrides/Banner.astro": "./overrides/Banner.astro",
     "./overrides/LanguageSelect.astro": "./overrides/LanguageSelect.astro",
-    "./overrides/PageTitle.astro": "./overrides/PageTitle.astro",
     "./overrides/Pagination.astro": "./overrides/Pagination.astro",
     "./overrides/ThemeSelect.astro": "./overrides/ThemeSelect.astro",
     "./styles/base": "./styles/base.css",
