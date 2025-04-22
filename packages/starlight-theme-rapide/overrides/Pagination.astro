@@ -8,23 +8,23 @@ const isRtl = dir === 'rtl'
 
 {
   (prev || next) && (
-    <div class="pagination-links" dir={dir}>
+    <div class="pagination-links print:hidden" dir={dir}>
       {prev && (
         <a href={prev.href} rel="prev">
-          <div>
+          <span class="link-label sl-flex">
             <Icon name={isRtl ? 'right-arrow' : 'left-arrow'} size="1.25rem" />
             {Astro.locals.t('page.previousLink')}
-          </div>
-          <p class="link-title">{prev.label}</p>
+          </span>
+          <span class="link-title">{prev.label}</span>
         </a>
       )}
       {next && (
         <a href={next.href} rel="next">
-          <div>
+          <span class="link-label sl-flex">
             {Astro.locals.t('page.nextLink')}
             <Icon name={isRtl ? 'left-arrow' : 'right-arrow'} size="1.25rem" />
-          </div>
-          <p class="link-title">{next.label}</p>
+          </span>
+          <span class="link-title">{next.label}</span>
         </a>
       )}
     </div>
@@ -32,44 +32,45 @@ const isRtl = dir === 'rtl'
 }
 
 <style>
-  .pagination-links {
-    border-top: 1px solid var(--sl-color-gray-5);
-    display: flex;
-    padding-top: 1.5rem;
-  }
+  @layer rapide {
+    .pagination-links {
+      border-top: 1px solid var(--sl-color-gray-5);
+      display: flex;
+      padding-top: 1.5rem;
+    }
 
-  .pagination-links a {
-    text-decoration: none;
-  }
+    a {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      text-decoration: none;
 
-  .pagination-links a div {
-    align-items: center;
-    color: var(--sl-color-gray-3);
-    display: flex;
-    font-size: var(--sl-text-sm);
-    gap: 0.15rem;
-  }
+      &:is(:hover, :focus-visible) {
+        .link-label {
+          color: var(--sl-color-gray-2);
+        }
 
-  .pagination-links a p {
-    color: var(--sl-color-gray-2);
-    font-weight: 600;
-    margin-inline: 0.25rem;
-  }
+        .link-title {
+          color: var(--sl-color-white);
+        }
+      }
 
-  .pagination-links a:is(:hover, :focus-visible) div {
-    color: var(--sl-color-gray-2);
-  }
+      &[rel='next'] {
+        align-items: flex-end;
+      }
+    }
 
-  .pagination-links a:is(:hover, :focus-visible) p {
-    color: var(--sl-color-white);
-  }
+    .link-label {
+      align-items: center;
+      color: var(--sl-color-gray-3);
+      font-size: var(--sl-text-sm);
+      gap: 0.15rem;
+    }
 
-  [rel='next'] {
-    margin-left: auto;
-    text-align: end;
-  }
-
-  [rel='next'] div {
-    justify-content: flex-end;
+    .link-title {
+      color: var(--sl-color-gray-2);
+      font-weight: 600;
+      margin-inline: 0.25rem;
+    }
   }
 </style>

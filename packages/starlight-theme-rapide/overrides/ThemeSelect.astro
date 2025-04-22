@@ -35,102 +35,105 @@ const id = `moon-mask-${crypto.randomBytes(4).toString('hex')}`
 </starlight-rapide-theme-select>
 
 <style>
-  starlight-rapide-theme-select {
-    --sl-rapide-theme-select-animation-duration: 400ms;
-    --sl-rapide-theme-select-ease-elastic: cubic-bezier(0.5, 1.25, 0.75, 1.25);
+  @layer rapide {
+    starlight-rapide-theme-select {
+      --sl-rapide-theme-select-animation-duration: 400ms;
+      --sl-rapide-theme-select-ease-elastic: cubic-bezier(0.5, 1.25, 0.75, 1.25);
 
-    align-self: stretch;
-  }
-
-  button {
-    align-items: center;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    height: 100%;
-    margin-inline: 0.5rem 0.5rem;
-    padding-inline: 0.75rem;
-  }
-
-  svg {
-    stroke-linecap: round;
-  }
-
-  svg :is(.moon, .sun, .sun-beams) {
-    transform-origin: center;
-  }
-
-  svg :is(.moon, .sun) {
-    fill: var(--sl-color-gray-2);
-  }
-
-  svg .sun-beams {
-    stroke: var(--sl-color-gray-2);
-    stroke-width: 2px;
-  }
-
-  button:is(:hover, :focus-visible) svg :is(.moon, .sun) {
-    fill: var(--sl-color-accent-high);
-  }
-
-  button:is(:hover, :focus-visible) svg .sun-beams {
-    stroke: var(--sl-color-accent-high);
-  }
-
-  :global([data-theme='dark']) svg .sun {
-    transform: scale(1.75);
-  }
-
-  :global([data-theme='dark']) svg .sun-beams {
-    opacity: 0;
-  }
-
-  :global([data-theme='dark']) svg .moon circle {
-    transform: translateX(-7px);
-  }
-
-  @supports (cx: 1) {
-    :global([data-theme='dark']) svg .moon circle {
-      cx: 17;
-      transform: translateX(0);
+      align-self: stretch;
     }
-  }
 
-  @media (prefers-reduced-motion: no-preference) {
-    svg .sun {
-      transition: transform var(--sl-rapide-theme-select-animation-duration) var(--sl-rapide-theme-select-ease-elastic);
+    button {
+      align-items: center;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      height: 100%;
+      margin-inline: 0.5rem 0.5rem;
+      padding-inline: 0.75rem;
+    }
+
+    svg {
+      stroke-linecap: round;
+    }
+
+    svg :is(.moon, .sun, .sun-beams) {
+      transform-origin: center;
+    }
+
+    svg :is(.moon, .sun) {
+      fill: var(--sl-color-gray-2);
     }
 
     svg .sun-beams {
-      transition:
-        opacity var(--sl-rapide-theme-select-animation-duration) ease,
-        transform var(--sl-rapide-theme-select-animation-duration) var(--sl-rapide-theme-select-ease-elastic);
+      stroke: var(--sl-color-gray-2);
+      stroke-width: 2px;
     }
 
-    svg .moon circle {
-      transition: transform calc(var(--sl-rapide-theme-select-animation-duration) / 2) ease-out;
+    button:is(:hover, :focus-visible) svg :is(.moon, .sun) {
+      fill: var(--sl-color-accent-high);
     }
 
-    @supports (cx: 1) {
-      svg .moon circle {
-        transition: cx calc(var(--sl-rapide-theme-select-animation-duration) / 2) ease-out;
-      }
+    button:is(:hover, :focus-visible) svg .sun-beams {
+      stroke: var(--sl-color-accent-high);
     }
 
     :global([data-theme='dark']) svg .sun {
       transform: scale(1.75);
-      transition-duration: calc(var(--sl-rapide-theme-select-animation-duration) / 2);
-      transition-timing-function: ease;
     }
 
     :global([data-theme='dark']) svg .sun-beams {
-      transform: rotateZ(-25deg);
-      transition-duration: calc(var(--sl-rapide-theme-select-animation-duration) / 4);
+      opacity: 0;
     }
 
     :global([data-theme='dark']) svg .moon circle {
-      transition-delay: calc(var(--sl-rapide-theme-select-animation-duration) / 4);
-      transition-duration: var(--sl-rapide-theme-select-animation-duration);
+      transform: translateX(-7px);
+    }
+
+    @supports (cx: 1) {
+      :global([data-theme='dark']) svg .moon circle {
+        cx: 17;
+        transform: translateX(0);
+      }
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      svg .sun {
+        transition: transform var(--sl-rapide-theme-select-animation-duration)
+          var(--sl-rapide-theme-select-ease-elastic);
+      }
+
+      svg .sun-beams {
+        transition:
+          opacity var(--sl-rapide-theme-select-animation-duration) ease,
+          transform var(--sl-rapide-theme-select-animation-duration) var(--sl-rapide-theme-select-ease-elastic);
+      }
+
+      svg .moon circle {
+        transition: transform calc(var(--sl-rapide-theme-select-animation-duration) / 2) ease-out;
+      }
+
+      @supports (cx: 1) {
+        svg .moon circle {
+          transition: cx calc(var(--sl-rapide-theme-select-animation-duration) / 2) ease-out;
+        }
+      }
+
+      :global([data-theme='dark']) svg .sun {
+        transform: scale(1.75);
+        transition-duration: calc(var(--sl-rapide-theme-select-animation-duration) / 2);
+        transition-timing-function: ease;
+      }
+
+      :global([data-theme='dark']) svg .sun-beams {
+        transform: rotateZ(-25deg);
+        transition-duration: calc(var(--sl-rapide-theme-select-animation-duration) / 4);
+      }
+
+      :global([data-theme='dark']) svg .moon circle {
+        transition-delay: calc(var(--sl-rapide-theme-select-animation-duration) / 4);
+        transition-duration: var(--sl-rapide-theme-select-animation-duration);
+      }
     }
   }
 </style>

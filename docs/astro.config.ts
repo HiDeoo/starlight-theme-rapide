@@ -6,7 +6,6 @@ export default defineConfig({
   integrations: [
     starlight({
       credits: true,
-      customCss: ['./src/styles/custom.css'],
       editLink: {
         baseUrl: 'https://github.com/HiDeoo/starlight-theme-rapide/edit/main/docs/',
       },
@@ -14,7 +13,7 @@ export default defineConfig({
       sidebar: [
         {
           label: 'Start Here',
-          items: [{ label: 'Getting Started', link: '/getting-started/' }],
+          items: ['getting-started', 'customization'],
         },
         {
           label: 'Resources',
@@ -25,10 +24,10 @@ export default defineConfig({
           autogenerate: { directory: 'examples' },
         },
       ],
-      social: {
-        blueSky: 'https://bsky.app/profile/hideoo.dev',
-        github: 'https://github.com/HiDeoo/starlight-theme-rapide',
-      },
+      social: [
+        { href: 'https://bsky.app/profile/hideoo.dev', icon: 'blueSky', label: 'Bluesky' },
+        { href: 'https://github.com/HiDeoo/starlight-theme-rapide', icon: 'github', label: 'GitHub' },
+      ],
       title: 'Starlight Rapide',
     }),
   ],

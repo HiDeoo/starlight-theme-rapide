@@ -1,0 +1,158 @@
+@layer rapide {
+  /**
+   * Common
+   */
+  :root,
+  ::backdrop {
+    --sl-hue-base: 17;
+    --sl-hue-orange: 84;
+    --sl-hue-green: 164;
+    --sl-hue-blue: 274;
+    --sl-hue-purple: 314;
+    --sl-hue-red: 13;
+
+    --sl-text-h1: var(--sl-text-3xl);
+    --sl-text-h2: var(--sl-text-2xl);
+    --sl-text-h3: var(--sl-text-xl);
+    --sl-text-h4: var(--sl-text-lg);
+    --sl-text-h5: unset;
+  }
+
+  /**
+   * Dark mode
+   */
+  :root,
+  ::backdrop {
+    --sl-color-white: oklch(90% 0.008 var(--sl-hue-base));
+    --sl-color-gray-1: oklch(80% 0.018 var(--sl-hue-base));
+    --sl-color-gray-2: oklch(80% 0.018 var(--sl-hue-base));
+    --sl-color-gray-3: oklch(65% 0.013 var(--sl-hue-base));
+    --sl-color-gray-4: oklch(48% 0.009 var(--sl-hue-base));
+    --sl-color-gray-5: oklch(29% 0.005 var(--sl-hue-base));
+    --sl-color-gray-6: oklch(23% 0.004 var(--sl-hue-base));
+    --sl-color-gray-7: oklch(20.5% 0.002 var(--sl-hue-base));
+    --sl-color-black: oklch(18% 0.002 var(--sl-hue-base));
+
+    --sl-color-orange-low: oklch(24% 0.01 var(--sl-hue-orange));
+    --sl-color-orange: oklch(62% 0.115 var(--sl-hue-orange));
+    --sl-color-orange-high: oklch(92% 0.062 var(--sl-hue-orange));
+    --sl-color-orange-accent: oklch(96% 0.04 var(--sl-hue-orange));
+    --sl-color-orange-accent-invert: oklch(79% 0.162 var(--sl-hue-orange));
+    --sl-color-orange-alt: oklch(25.5% 0.01 var(--sl-hue-orange));
+    --sl-color-orange-alt-invert: oklch(42% 0.042 var(--sl-hue-orange));
+
+    --sl-color-green-low: oklch(20% 0.018 var(--sl-hue-green));
+    --sl-color-green: oklch(61% 0.115 var(--sl-hue-green));
+    --sl-color-green-high: oklch(86% 0.054 var(--sl-hue-green));
+    --sl-color-green-accent: oklch(93% 0.054 var(--sl-hue-green));
+    --sl-color-green-accent-invert: oklch(66% 0.14 var(--sl-hue-green));
+
+    --sl-color-blue-low: oklch(20% 0.02 var(--sl-hue-blue));
+    --sl-color-blue: oklch(56% 0.181 var(--sl-hue-blue));
+    --sl-color-blue-high: oklch(86% 0.054 var(--sl-hue-blue));
+    --sl-color-blue-accent: oklch(89% 0.05 var(--sl-hue-blue));
+    --sl-color-blue-accent-invert: oklch(66% 0.154 var(--sl-hue-blue));
+    --sl-color-blue-alt: oklch(21.5% 0.02 var(--sl-hue-blue));
+    --sl-color-blue-alt-invert: oklch(36% 0.034 var(--sl-hue-blue));
+
+    --sl-color-purple-low: oklch(22% 0.012 var(--sl-hue-purple));
+    --sl-color-purple: oklch(59% 0.166 var(--sl-hue-purple));
+    --sl-color-purple-high: oklch(86% 0.053 var(--sl-hue-purple));
+    --sl-color-purple-accent: oklch(92% 0.05 var(--sl-hue-purple));
+    --sl-color-purple-accent-invert: oklch(66% 0.153 var(--sl-hue-purple));
+    --sl-color-purple-alt: oklch(23.5% 0.012 var(--sl-hue-purple));
+    --sl-color-purple-alt-invert: oklch(36% 0.033 var(--sl-hue-purple));
+
+    --sl-color-red-low: oklch(20% 0.018 var(--sl-hue-red));
+    --sl-color-red: oklch(44% 0.151 var(--sl-hue-red));
+    --sl-color-red-high: oklch(87% 0.05 var(--sl-hue-red));
+    --sl-color-red-accent: oklch(92% 0.04 var(--sl-hue-red));
+    --sl-color-red-accent-invert: oklch(67% 0.15 var(--sl-hue-red));
+    --sl-color-red-alt: oklch(21.5% 0.018 var(--sl-hue-red));
+    --sl-color-red-alt-invert: oklch(37% 0.03 var(--sl-hue-red));
+
+    --sl-hue-accent: 164;
+    --sl-color-accent-low: oklch(19% 0.02 var(--sl-hue-accent));
+    --sl-color-accent: oklch(50% 0.085 var(--sl-hue-accent));
+    --sl-color-accent-high: oklch(61% 0.085 var(--sl-hue-accent));
+
+    --sl-color-bg-nav: var(--sl-color-black);
+    --sl-color-bg-sidebar: var(--sl-color-black);
+    --sl-color-backdrop-overlay: oklch(24% 0.002 var(--sl-hue-base) / 0.7);
+
+    --sl-rapide-ui-bg-color: oklch(18% 0 0);
+    --sl-rapide-ui-header-bg-color: oklch(18% 0.002 var(--sl-hue-base) / 0.8);
+    --sl-rapide-ui-border-color: oklch(28% 0.004 var(--sl-hue-base));
+
+    --sl-rapide-ec-marker-bg-color: oklch(27% 0.002 var(--sl-hue-base));
+    --sl-rapide-ec-marker-border-color: oklch(47% 0.002 var(--sl-hue-base));
+  }
+
+  /**
+   * Light mode
+   */
+  :root[data-theme='light'],
+  [data-theme='light'] ::backdrop {
+    --sl-color-white: oklch(30% 0.015 var(--sl-hue-base));
+    --sl-color-gray-1: oklch(36% 0.018 var(--sl-hue-base));
+    --sl-color-gray-2: oklch(36% 0.018 var(--sl-hue-base));
+    --sl-color-gray-3: oklch(44% 0.013 var(--sl-hue-base));
+    --sl-color-gray-4: oklch(66% 0.013 var(--sl-hue-base));
+    --sl-color-gray-5: oklch(88% 0.009 var(--sl-hue-base));
+    --sl-color-gray-6: oklch(90% 0.004 var(--sl-hue-base));
+    --sl-color-gray-7: oklch(96% 0.003 var(--sl-hue-base));
+    --sl-color-black: oklch(98% 0.002 var(--sl-hue-base));
+
+    --sl-color-orange-low: oklch(96% 0.02 var(--sl-hue-orange));
+    --sl-color-orange: oklch(74% 0.15 var(--sl-hue-orange));
+    --sl-color-orange-high: oklch(44% 0.09 var(--sl-hue-orange));
+    --sl-color-orange-accent: oklch(42% 0.08 var(--sl-hue-orange));
+    --sl-color-orange-accent-invert: oklch(52% 0.15 var(--sl-hue-orange));
+    --sl-color-orange-alt: oklch(95% 0.03 var(--sl-hue-orange));
+    --sl-color-orange-alt-invert: oklch(78% 0.06 var(--sl-hue-orange));
+
+    --sl-color-green-low: oklch(96% 0.01 var(--sl-hue-green));
+    --sl-color-green: oklch(66% 0.14 var(--sl-hue-green));
+    --sl-color-green-high: oklch(43% 0.09 var(--sl-hue-green));
+    --sl-color-green-accent: oklch(36% 0.07 var(--sl-hue-green));
+    --sl-color-green-accent-invert: oklch(50% 0.1 var(--sl-hue-green));
+
+    --sl-color-blue-low: oklch(95% 0.02 var(--sl-hue-blue));
+    --sl-color-blue: oklch(66% 0.15 var(--sl-hue-blue));
+    --sl-color-blue-high: oklch(40% 0.102 var(--sl-hue-blue));
+    --sl-color-blue-accent: oklch(35% 0.1 var(--sl-hue-blue));
+    --sl-color-blue-accent-invert: oklch(52% 0.2 var(--sl-hue-blue));
+    --sl-color-blue-alt: oklch(93% 0.03 var(--sl-hue-blue));
+    --sl-color-blue-alt-invert: oklch(77% 0.05 var(--sl-hue-blue));
+
+    --sl-color-purple-low: oklch(95% 0.02 var(--sl-hue-purple));
+    --sl-color-purple: oklch(66% 0.15 var(--sl-hue-purple));
+    --sl-color-purple-high: oklch(40% 0.102 var(--sl-hue-purple));
+    --sl-color-purple-accent: oklch(35% 0.1 var(--sl-hue-purple));
+    --sl-color-purple-accent-invert: oklch(52% 0.2 var(--sl-hue-purple));
+    --sl-color-purple-alt: oklch(93% 0.03 var(--sl-hue-purple));
+    --sl-color-purple-alt-invert: oklch(77% 0.05 var(--sl-hue-purple));
+
+    --sl-color-red-low: oklch(95% 0.01 var(--sl-hue-red));
+    --sl-color-red: oklch(66% 0.15 var(--sl-hue-red));
+    --sl-color-red-high: oklch(42% 0.13 var(--sl-hue-red));
+    --sl-color-red-accent: oklch(38% 0.15 var(--sl-hue-red));
+    --sl-color-red-accent-invert: oklch(52% 0.2 var(--sl-hue-red));
+    --sl-color-red-alt: oklch(94% 0.02 var(--sl-hue-red));
+    --sl-color-red-alt-invert: oklch(78% 0.04 var(--sl-hue-red));
+
+    --sl-hue-accent: 160;
+    --sl-color-accent-low: oklch(96% 0.015 var(--sl-hue-accent));
+    --sl-color-accent: oklch(53% 0.1197 var(--sl-hue-accent));
+    --sl-color-accent-high: oklch(46% 0.104 var(--sl-hue-accent));
+
+    --sl-color-backdrop-overlay: oklch(84% 0.003 var(--sl-hue-base) / 0.7);
+
+    --sl-rapide-ui-bg-color: oklch(100% 0 0);
+    --sl-rapide-ui-header-bg-color: oklch(98% 0.002 var(--sl-hue-base) / 0.7);
+    --sl-rapide-ui-border-color: oklch(88% 0.004 var(--sl-hue-base));
+
+    --sl-rapide-ec-marker-bg-color: oklch(93% 0.002 var(--sl-hue-base));
+    --sl-rapide-ec-marker-border-color: oklch(62% 0.002 var(--sl-hue-base));
+  }
+}
