@@ -220,8 +220,25 @@
       }
     }
 
-    .top-level > li + li {
-      margin-top: 1.25rem;
+    .top-level {
+      & > li + li {
+        margin-block: 0;
+      }
+
+      & > li + li:has(details),
+      & > li:has(details) + li:not(:has(details)) {
+        margin-top: 1rem;
+      }
+
+      & > li > .large {
+        color: var(--sl-color-gray-2);
+        font-size: var(--sl-text-sm);
+        font-weight: inherit;
+
+        &:is(:hover, :focus-visible) {
+          color: var(--sl-color-white);
+        }
+      }
     }
 
     a[aria-current='page'] {
