@@ -671,5 +671,12 @@
         margin-inline: var(--sl-content-pad-x);
       }
     }
+
+    @media (min-width: 88.5rem) {
+      [data-has-sidebar] & {
+        margin-left: auto;
+        margin-right: var(--sl-content-pad-x);
+      }
+    }
   }
 }
