@@ -1,8 +1,11 @@
 ---
 title: Code Blocks
+pagefind: false
 ---
 
 ## Markdown code block
+
+Code block rendered with the [Markdown syntax](https://starlight.astro.build/guides/authoring-content/#code-blocks) using three backticks <code>```</code> at the start and end.
 
 ```js
 const foo = 'bar'
@@ -10,11 +13,15 @@ const foo = 'bar'
 
 ## `<Code>` component
 
+Code block rendered with the [`<Code>` component](https://starlight.astro.build/components/code/).
+
 import { Code } from '@astrojs/starlight/components'
 
 <Code code="const foo = 'bar'" lang="js" />
 
 ## Text markers
+
+Code blocks with some [text markers](https://expressive-code.com/key-features/text-markers/).
 
 ```js {2}
 function test() {
@@ -28,7 +35,30 @@ function test() {
 }
 ```
 
+### Labels
+
+Code blocks with some [text markers](https://expressive-code.com/key-features/text-markers/) and [labels](https://expressive-code.com/key-features/text-markers/#adding-labels-to-line-markers).
+
+{/* prettier-ignore-start */}
+```astro title="example.astro" {"1. Keep the existing icon.":5-6} del={"2. Remove the button.":8-9} ins={"3. Add a link.":11-12}
+---
+import { Icon } from '@astrojs/starlight/components';
+---
+
+
+<Icon name="seti:lock" />
+
+
+<button type="button">Login</button>
+
+
+<a href="/login/">Login</a>
+```
+{/* prettier-ignore-end */}
+
 ## Diff
+
+Code block combining [syntax highlighting with `diff`-like syntax](https://expressive-code.com/key-features/text-markers/#combining-syntax-highlighting-with-diff-like-syntax).
 
 ```diff lang="js"
   function test() {
@@ -37,15 +67,19 @@ function test() {
   }
 ```
 
-## File name
+## Editor frame
+
+Code block with a [file name](https://expressive-code.com/key-features/frames/#code-editor-frames) in the editor frame.
 
 ```js
 // test.js
 const foo = 'bar'
 ```
 
-## Terminal window
+## Terminal frame
 
-```bash title="Doing something…"
-pnpm run thing
+Code block with a [terminal frame](https://expressive-code.com/key-features/frames/#terminal-frames).
+
+```bash title="Build something…"
+pnpm run build
 ```

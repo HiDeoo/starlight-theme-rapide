@@ -1,0 +1,225 @@
+---
+title: Kitchen sink
+pagefind: false
+sidebar:
+  order: 1
+  badge: Demo
+---
+
+A page with a wide variety of different [Markdown syntax](https://starlight.astro.build/guides/authoring-content/) or [components](https://starlight.astro.build/components/using-components/) to show how these look together.
+See the following pages for individual examples.
+
+## Asides
+
+:::note
+A `:::note` or `<Aside type="note">` aside with a [link](#_) in the content.
+:::
+
+:::tip
+A `:::tip` or `<Aside type="tip">` aside with a [link](#_) in the content.
+:::
+
+:::caution
+A `:::caution` or `<Aside type="caution">` aside with a [link](#_) in the content.
+:::
+
+:::danger
+A `:::danger` or `<Aside type="danger">` aside with a [link](#_) in the content.
+:::
+
+## Badges
+
+import { Badge } from '@astrojs/starlight/components'
+
+- <Badge text="New" variant="tip" size="small" />
+- <Badge text="Deprecated" variant="caution" size="medium" />
+- <Badge text="Demo" variant="note" size="large" />
+- <Badge text="200" variant="success" />
+- <Badge text="Experimental" variant="danger" />
+
+## Blockquotes
+
+> The content of the quote can use **any** other Markdown syntax.
+
+## Cards
+
+import { Card } from '@astrojs/starlight/components'
+
+<Card title="Card title">
+  The content of the card that can use any other Markdown syntax.
+</Card>
+
+### Card grid
+
+import { CardGrid } from '@astrojs/starlight/components'
+
+<CardGrid>
+  <Card title="Card title" icon="star">
+    The content of the card.
+  </Card>
+  <Card title="Card title" icon="moon">
+    The content of the card.
+  </Card>
+</CardGrid>
+
+### Link card
+
+import { LinkCard } from '@astrojs/starlight/components'
+
+<LinkCard
+  title="Link title"
+  description="The description of the link."
+  href="#_"
+/>
+
+### Link card grid
+
+<CardGrid>
+  <LinkCard title="Link title" href="#_" />
+  <LinkCard title="Link title" href="#_" />
+</CardGrid>
+
+## Details
+
+<details>
+<summary>The summary of the disclosure</summary>
+
+The content of the [disclosure](https://starlight.astro.build/guides/authoring-content/#details) that can use any other Markdown syntax.
+
+</details>
+
+## Code Blocks
+
+```astro title="example.astro" {7} ins="insertions" del="deletions"
+---
+// A code block example
+---
+
+<p>A paragraph with a variable: {Astro.props.foo}</p>
+
+With highlighted content. Including insertions or deletions.
+```
+
+### Diff
+
+```diff lang="js"
+  function test() {
+-   const foo = 'bar'
++   const foo = 'baz'
+  }
+```
+
+### Labels
+
+{/* prettier-ignore-start */}
+```astro title="example.astro" {"1. Keep the existing icon.":5-6} del={"2. Remove the button.":8-9} ins={"3. Add a link.":11-12}
+---
+import { Icon } from '@astrojs/starlight/components'
+---
+
+
+<Icon name="seti:lock" />
+
+
+<button type="button">Login</button>
+
+
+<a href="/login/">Login</a>
+```
+{/* prettier-ignore-end */}
+
+### Terminal frame
+
+```bash title="Build something…"
+pnpm run build
+```
+
+## File Tree
+
+import { FileTree } from '@astrojs/starlight/components'
+
+<FileTree>
+
+- astro.config.mjs an **important** file
+- package.json
+- README.md
+- src
+  - components
+    - **Header.astro**
+  - …
+- pages/
+
+</FileTree>
+
+## Link Buttons
+
+import { LinkButton } from '@astrojs/starlight/components'
+
+<LinkButton href="#_" icon="rocket">
+  Primary
+</LinkButton>
+<LinkButton href="#_" variant="secondary" icon="external">
+  Secondary
+</LinkButton>
+<LinkButton href="#_" variant="minimal" icon="external">
+  Minimal
+</LinkButton>
+
+## Steps
+
+import { Steps } from '@astrojs/starlight/components'
+
+<Steps>
+
+1. The first step of the guide that can use **any** other Markdown syntax.
+
+   ```js
+   const foo = 'bar'
+   ```
+
+2. A second and final step.
+
+</Steps>
+
+## Tabs
+
+import { Tabs, TabItem } from '@astrojs/starlight/components'
+
+<Tabs>
+
+<TabItem label="npm" icon="seti:npm">
+
+```sh
+npm install starlight-theme-rapide
+```
+
+</TabItem>
+
+<TabItem label="pnpm" icon="pnpm">
+
+```sh
+pnpm add starlight-theme-rapide
+```
+
+</TabItem>
+
+<TabItem label="Yarn" icon="seti:yarn">
+
+```sh
+yarn add starlight-theme-rapide
+```
+
+</TabItem>
+
+</Tabs>
+
+## Tables
+
+| Column 1 | Column 2 | Column 3 | Column 4 |
+| -------- | -------- | -------- | -------- |
+| Cell 1-1 | Cell 1-2 | Cell 1-3 | Cell 1-4 |
+| Cell 2-1 | Cell 2-2 | Cell 2-3 | Cell 2-4 |
+| Cell 3-1 | Cell 3-2 | Cell 3-3 | Cell 3-4 |
+| Cell 4-1 | Cell 4-2 | Cell 4-3 | Cell 4-4 |
+| Cell 5-1 | Cell 5-2 | Cell 5-3 | Cell 5-4 |
+| Cell 6-1 | Cell 6-2 | Cell 6-3 | Cell 6-4 |

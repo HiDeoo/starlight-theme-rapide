@@ -1,68 +1,63 @@
 ---
 title: Asides
+pagefind: false
 ---
 
 ## Markdown asides
 
+Asides rendered with the [custom Markdown syntax](https://starlight.astro.build/guides/authoring-content/#asides) using a pair of triple colons `:::` to wrap your content.
+
 :::note
 
-Donec sollicitudin dolor et sollicitudin [efficitur](#_). Nullam semper posuere lacinia.
+A `note` aside with a [link](#_) in the content.
 
 :::
 
 :::tip
 
-Donec sollicitudin dolor et sollicitudin [efficitur](#_). Nullam semper posuere lacinia.
+A `tip` aside with a [link](#_) in the content.
 
 :::
 
 :::caution
 
-Donec sollicitudin dolor et sollicitudin [efficitur](#_). Nullam semper posuere lacinia.
+A `caution` aside with a [link](#_) in the content.
 
 :::
 
 :::danger
 
-Donec sollicitudin dolor et sollicitudin [efficitur](#_). Nullam semper posuere lacinia.
+A `danger` aside with a [link](#_) in the content.
 
 :::
 
 ## Component asides
 
+Asides rendered with the [`<Aside>` component](https://starlight.astro.build/components/asides/).
+
 import { Aside } from '@astrojs/starlight/components'
 
-<Aside>
-  Donec sollicitudin dolor et sollicitudin [efficitur](#_). Nullam semper
-  posuere lacinia.
-</Aside>
+<Aside>A `note` aside with a [link](#_) in the content.</Aside>
 
-<Aside type="tip">
-  Donec sollicitudin dolor et sollicitudin [efficitur](#_). Nullam semper
-  posuere lacinia.
-</Aside>
+<Aside type="tip">A `tip` aside with a [link](#_) in the content.</Aside>
 
 <Aside type="caution">
-  Donec sollicitudin dolor et sollicitudin [efficitur](#_). Nullam semper
-  posuere lacinia.
+  A `caution` aside with a [link](#_) in the content.
 </Aside>
 
-<Aside type="danger">
-  Donec sollicitudin dolor et sollicitudin [efficitur](#_). Nullam semper
-  posuere lacinia.
-</Aside>
+<Aside type="danger">A `danger` aside with a [link](#_) in the content.</Aside>
 
-## With content
+## Asides with content
 
 :::note
 
-Some code:
+A code block:
 
 ```js
 const foo = 'bar'
 ```
 
-Some `inline` code
+A sentence with some `inline` code followed by an horizontal rule.
 
 ---
 
@@ -80,9 +75,9 @@ A table:
 A disclosure:
 
 <details>
-<summary>Nullam nec posuere lorem.</summary>
+<summary>The summary of the disclosure</summary>
 
-Aenean tempor, orci eget ullamcorper luctus, nisl turpis pharetra mauris, sit amet tristique elit orci et sem. Aenean odio purus, suscipit quis accumsan in, blandit at ex.
+The content of the [disclosure](https://starlight.astro.build/guides/authoring-content/#details) that can use any other Markdown syntax.
 
 </details>
 
@@ -90,13 +85,13 @@ Aenean tempor, orci eget ullamcorper luctus, nisl turpis pharetra mauris, sit am
 
 :::tip
 
-Some code:
+A code block:
 
 ```js
 const foo = 'bar'
 ```
 
-Some `inline` code
+A sentence with some `inline` code followed by an horizontal rule.
 
 ---
 
@@ -114,9 +109,9 @@ A table:
 A disclosure:
 
 <details>
-<summary>Nullam nec posuere lorem.</summary>
+<summary>The summary of the disclosure</summary>
 
-Aenean tempor, orci eget ullamcorper luctus, nisl turpis pharetra mauris, sit amet tristique elit orci et sem. Aenean odio purus, suscipit quis accumsan in, blandit at ex.
+The content of the [disclosure](https://starlight.astro.build/guides/authoring-content/#details) that can use any other Markdown syntax.
 
 </details>
 
@@ -124,13 +119,13 @@ Aenean tempor, orci eget ullamcorper luctus, nisl turpis pharetra mauris, sit am
 
 :::caution
 
-Some code:
+A code block:
 
 ```js
 const foo = 'bar'
 ```
 
-Some `inline` code
+A sentence with some `inline` code followed by an horizontal rule.
 
 ---
 
@@ -148,9 +143,9 @@ A table:
 A disclosure:
 
 <details>
-<summary>Nullam nec posuere lorem.</summary>
+<summary>The summary of the disclosure</summary>
 
-Aenean tempor, orci eget ullamcorper luctus, nisl turpis pharetra mauris, sit amet tristique elit orci et sem. Aenean odio purus, suscipit quis accumsan in, blandit at ex.
+The content of the [disclosure](https://starlight.astro.build/guides/authoring-content/#details) that can use any other Markdown syntax.
 
 </details>
 
@@ -158,13 +153,13 @@ Aenean tempor, orci eget ullamcorper luctus, nisl turpis pharetra mauris, sit am
 
 :::danger
 
-Some code:
+A code block:
 
 ```js
 const foo = 'bar'
 ```
 
-Some `inline` code
+A sentence with some `inline` code followed by an horizontal rule.
 
 ---
 
@@ -182,9 +177,9 @@ A table:
 A disclosure:
 
 <details>
-<summary>Nullam nec posuere lorem.</summary>
+<summary>The summary of the disclosure</summary>
 
-Aenean tempor, orci eget ullamcorper luctus, nisl turpis pharetra mauris, sit amet tristique elit orci et sem. Aenean odio purus, suscipit quis accumsan in, blandit at ex.
+The content of the [disclosure](https://starlight.astro.build/guides/authoring-content/#details) that can use any other Markdown syntax.
 
 </details>
 
