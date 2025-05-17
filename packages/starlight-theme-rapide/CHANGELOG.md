@@ -1,5 +1,11 @@
 # starlight-theme-rapide
 
+## 0.5.1
+
+### Patch Changes
+
+- [#28](https://github.com/HiDeoo/starlight-theme-rapide/pull/28) [`a77f5d2`](https://github.com/HiDeoo/starlight-theme-rapide/commit/a77f5d252235adc8035ef09458c4b12244e18030) Thanks [@HiDeoo](https://github.com/HiDeoo)! - Fixes a banner position issue when using a banner in pages with a sidebar.
+
 ## 0.5.0
 
 ### Minor Changes
