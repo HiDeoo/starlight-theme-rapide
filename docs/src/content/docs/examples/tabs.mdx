@@ -1,20 +1,27 @@
 ---
 title: Tabs
+pagefind: false
 ---
 
 import { Tabs, TabItem } from '@astrojs/starlight/components'
 
+## No icons
+
+A tabbed interface rendered with the [`<Tabs>` and `<TabItem>` components](https://starlight.astro.build/components/tabs/).
+
 <Tabs>
-  <TabItem label="Lorem">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ornare ante
-    est, eget molestie arcu euismod eu. Suspendisse ac tincidunt tellus, sed
-    vehicula eros.
+  <TabItem label="A tab">
+    The first tab content that can use **any** other Markdown syntax.
   </TabItem>
-  <TabItem label="Ipsum">
-    Nam condimentum, lorem eget scelerisque pellentesque, arcu sapien fringilla
-    ligula, eget dictum lectus odio in mi.
+  <TabItem label="Another tab">
+    The content of the second tab that can also use **any** other Markdown
+    syntax.
   </TabItem>
 </Tabs>
+
+## With icons
+
+A tabbed interface rendered with the [`<Tabs>` and `<TabItem>` components](https://starlight.astro.build/components/tabs/) and [icons](https://starlight.astro.build/components/tabs/#add-icons-to-tabs).
 
 <Tabs>
 

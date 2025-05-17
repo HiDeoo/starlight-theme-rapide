@@ -1,40 +1,41 @@
 ---
 title: Markdown
+pagefind: false
 ---
 
 ## Heading 2
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu ante elementum, ultrices massa ut, ornare lacus. Praesent iaculis, ex ac pellentesque malesuada, arcu mi imperdiet purus, et molestie neque leo quis felis. Nunc et odio bibendum, vestibulum elit sit amet, viverra lorem.
+Some text content used as a placeholder for the purpose of this example page. The content is not meant to be meaningful or relevant, but rather to preview how the page will look with actual content.
 
 ### Heading 3
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu ante elementum, ultrices massa ut, ornare lacus. Praesent iaculis, ex ac pellentesque malesuada, arcu mi imperdiet purus, et molestie neque leo quis felis. Nunc et odio bibendum, vestibulum elit sit amet, viverra lorem.
+Some text content used as a placeholder for the purpose of this example page. The content is not meant to be meaningful or relevant, but rather to preview how the page will look with actual content.
 
 #### Heading 4
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu ante elementum, ultrices massa ut, ornare lacus. Praesent iaculis, ex ac pellentesque malesuada, arcu mi imperdiet purus, et molestie neque leo quis felis. Nunc et odio bibendum, vestibulum elit sit amet, viverra lorem.
+Some text content used as a placeholder for the purpose of this example page. The content is not meant to be meaningful or relevant, but rather to preview how the page will look with actual content.
 
 ##### Heading 5
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu ante elementum, ultrices massa ut, ornare lacus. Praesent iaculis, ex ac pellentesque malesuada, arcu mi imperdiet purus, et molestie neque leo quis felis. Nunc et odio bibendum, vestibulum elit sit amet, viverra lorem.
+Some text content used as a placeholder for the purpose of this example page. The content is not meant to be meaningful or relevant, but rather to preview how the page will look with actual content.
 
 ###### Heading 6
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu ante elementum, ultrices massa ut, ornare lacus. Praesent iaculis, ex ac pellentesque malesuada, arcu mi imperdiet purus, et molestie neque leo quis felis. Nunc et odio bibendum, vestibulum elit sit amet, viverra lorem.
+Some text content used as a placeholder for the purpose of this example page. The content is not meant to be meaningful or relevant, but rather to preview how the page will look with actual content.
 
 ## Styling text
 
-Fusce imperdiet, **tellus** ornare tempor _cursus_, tellus ipsum fringilla ~~quam~~, in venenatis neque augue vitae **_turpis_**. Nulla sed neque volutpat, eleifend purus <sub>sit amet</sub>, porttitor nisi. Ut id sodales lorem. Suspendisse <sup>auctor</sup> augue nisl, sed placerat enim porttitor at. Etiam eu ipsum suscipit, egestas ante non, eleifend nulla.
+Some text content with some **bold** text, _italic_ text, ~~strikethrough~~ text, and some **_bold italic_** text. Some text can also be displayed as <sub>subscript</sub> or <sup>superscript</sup>.
 
 ## Quoting text
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla in enim sem.
+Some text content can be quoted using the `>` character.
 
-> Mauris dictum augue augue, ut accumsan tellus convallis ut. Nam vitae libero vestibulum, feugiat mi rhoncus, imperdiet dui. In eros diam, sagittis ultrices dolor ac, ultrices cursus sapien. Morbi fringilla porta purus, sed interdum urna luctus vitae.
+> The content of the quote can use **any** other Markdown syntax.
 
-## Quoting code
+## Code
 
-Curabitur congue ac `enim` id hendrerit.
+Code can be displayed `inline` or in a code block.
 
 ```js
 const foo = 'bar'
@@ -42,17 +43,17 @@ const foo = 'bar'
 
 ## Links
 
-Fusce tincidunt urna at [ultricies](#_) sollicitudin.
+Some text content with a [link](#_) to another page.
 
 ## Lists
 
-- Lorem
-- Ipsum
-  - Dolor
-  - Sit
-- Amet
-  1. Consectetur
-  2. Adipiscing
+- List items
+- can
+  - be
+  - nested
+- and
+  1. be
+  2. numbered
 
 ## Tables
 
@@ -67,9 +68,11 @@ Fusce tincidunt urna at [ultricies](#_) sollicitudin.
 
 ## Details
 
-<details>
-<summary>Nullam nec posuere lorem.</summary>
+Details (also known as “disclosures” or “accordions”) can be used to hide content that is not immediately relevant.
 
-Aenean tempor, orci eget ullamcorper luctus, nisl turpis pharetra mauris, sit amet tristique elit orci et sem. Aenean odio purus, suscipit quis accumsan in, blandit at ex.
+<details>
+<summary>The summary of the disclosure</summary>
+
+The content of the [disclosure](https://starlight.astro.build/guides/authoring-content/#details) that can use any other Markdown syntax.
 
 </details>

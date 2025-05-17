@@ -1,6 +1,7 @@
 ---
 title: Draft
+pagefind: false
 draft: true
 ---
 
-This is a draft.
+A [draft](https://starlight.astro.build/reference/frontmatter/#draft) page not included in production builds.

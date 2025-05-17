@@ -1,31 +1,32 @@
 ---
 title: Link Buttons
+pagefind: false
 ---
 
 import { LinkButton } from '@astrojs/starlight/components'
 
 ## No icons
 
-<LinkButton href="/getting-started/">Get started</LinkButton>
-<LinkButton href="https://starlight.astro.build/" variant="secondary">
-  Related: Starlight
+Link buttons rendered with the [`<LinkButton>` component](https://starlight.astro.build/components/link-buttons/).
+
+<LinkButton href="#_">Primary</LinkButton>
+<LinkButton href="#_" variant="secondary">
+  Secondary
 </LinkButton>
-<LinkButton href="https://docs.astro.build/" variant="minimal">
-  Related: Astro
+<LinkButton href="#_" variant="minimal">
+  Minimal
 </LinkButton>
 
 ## With icons
 
-<LinkButton href="/getting-started/" icon="rocket">
-  Get started
+Link buttons rendered with the [`<LinkButton>` component](https://starlight.astro.build/components/link-buttons/) and [an icon](https://starlight.astro.build/components/link-buttons/#add-icons-to-link-buttons).
+
+<LinkButton href="#_" icon="rocket">
+  Primary
 </LinkButton>
-<LinkButton
-  href="https://starlight.astro.build/"
-  variant="secondary"
-  icon="external"
->
-  Related: Starlight
+<LinkButton href="#_" variant="secondary" icon="external">
+  Secondary
 </LinkButton>
-<LinkButton href="https://docs.astro.build/" variant="minimal" icon="external">
-  Related: Astro
+<LinkButton href="#_" variant="minimal" icon="external">
+  Minimal
 </LinkButton>
