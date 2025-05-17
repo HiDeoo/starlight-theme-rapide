@@ -5,7 +5,7 @@ description: Learn how to customize your Starlight site and the Starlight Rapide
 
 ## Custom CSS
 
-To customize the styles applied to your Starlight site when using the Starlight Rapide theme, you can providing additional CSS files to modify or extend the Starlight and the Starlight Rapide theme default styles.
+To customize the styles applied to your Starlight site when using the Starlight Rapide theme, you can provide additional CSS files to modify or extend the Starlight and Starlight Rapide theme default styles.
 
 [Learn more about custom CSS in the Starlight documentation.](https://starlight.astro.build/guides/css-and-tailwind/#custom-css-styles)
 
@@ -13,9 +13,9 @@ To customize the styles applied to your Starlight site when using the Starlight 
 
 Like Starlight, the Starlight Rapide theme uses [cascade layers](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Cascade_layers) internally to manage the order of its styles.
 This ensures a predictable CSS order and allows for simpler overrides.
-Any custom unlayered CSS will override the default styles from the `starlight` and `rapide` layers.
+Any custom unlayered CSS will override the default styles from Starlight and the Starlight Rapide theme.
 
-If you are using cascade layers, you can use [`@layer`](https://developer.mozilla.org/en-US/docs/Web/CSS/@layer) in your [custom CSS](https://starlight.astro.build/guides/css-and-tailwind/#custom-css-styles) to define the order of precedence for different layers relative to the Starlight and Starlight Rapide theme styles:
+If you are using cascade layers, you can use [`@layer`](https://developer.mozilla.org/en-US/docs/Web/CSS/@layer) in your [custom CSS](https://starlight.astro.build/guides/css-and-tailwind/#custom-css-styles) to define the order of precedence for different layers relative to styles from the `starlight` and `rapide` layers:
 
 ```css "starlight" "rapide"
 /* src/styles/custom.css */
