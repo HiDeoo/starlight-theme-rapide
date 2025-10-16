@@ -1,5 +1,11 @@
 # starlight-theme-rapide
 
+## 0.5.2
+
+### Patch Changes
+
+- [#31](https://github.com/HiDeoo/starlight-theme-rapide/pull/31) [`4b81ed5`](https://github.com/HiDeoo/starlight-theme-rapide/commit/4b81ed5c04cfec5f26269eacae81cbb57f28c728) Thanks [@HiDeoo](https://github.com/HiDeoo)! - Setups trusted publishing using OpenID Connect (OIDC) authentication — no code changes.
+
 ## 0.5.1
 
 ### Patch Changes
