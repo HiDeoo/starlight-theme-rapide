@@ -57,17 +57,15 @@
     }
   }
 
-  starlight-menu-button {
-    button {
-      box-shadow: none;
+  .sl-menu-button {
+    box-shadow: none;
 
-      [data-theme='light'] & {
-        background-color: var(--sl-color-white);
-        color: var(--sl-color-black);
-      }
+    [data-theme='light'] & {
+      background-color: var(--sl-color-white);
+      color: var(--sl-color-black);
     }
 
-    [data-theme='light'] &[aria-expanded='true'] button {
+    [data-theme='light'] &:has(~ :popover-open) {
       background-color: var(--sl-color-gray-2);
     }
   }
