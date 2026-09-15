@@ -8,7 +8,8 @@ export function overrideComponents(
 ): StarlightUserConfig['components'] {
   const components = { ...starlightConfig.components }
   for (const override of overrides) {
-    if (starlightConfig.components?.[override]) {
+    const component = starlightConfig.components?.[override]
+    if (component) {
       const fallback = `starlight-theme-rapide/overrides/${override}.astro`
 
       logger.warn(`A \`<${override}>\` component override is already defined in your Starlight configuration.`)
