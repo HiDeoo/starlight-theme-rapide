@@ -138,11 +138,6 @@ const id = `moon-mask-${crypto.randomBytes(4).toString('hex')}`
   }
 </style>
 
-{/* Inlined to avoid FOUC. Uses global scope from `ThemeProvider.astro` */}
-<script is:inline>
-  StarlightThemeProvider.updatePickers()
-</script>
-
 <script>
   type Theme = 'auto' | 'dark' | 'light'
 
@@ -171,9 +166,8 @@ const id = `moon-mask-${crypto.randomBytes(4).toString('hex')}`
     return matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'
   }
 
-  /** Update select menu UI, document theme, and local storage state. */
+  /** Update document theme and local storage state. */
   function onThemeChange(theme: Theme): void {
-    StarlightThemeProvider.updatePickers(theme)
     document.documentElement.dataset['theme'] = theme === 'auto' ? getPreferredColorScheme() : theme
     storeTheme(theme)
   }
